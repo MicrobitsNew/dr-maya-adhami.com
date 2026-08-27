@@ -1,0 +1,76 @@
+name: Netlify - Deploy
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: cd-${{github.ref}}-deploy-web
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify Netlify secrets are present
+        env:
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_ACCESS_TOKEN }}
+        run: |
+          missing=0
+          if [ -z "$NETLIFY_SITE_ID" ]; then
+            echo "::error::Repository secret NETLIFY_SITE_ID is not set."
+            missing=1
+          fi
+          if [ -z "$NETLIFY_AUTH_TOKEN" ]; then
+            echo "::error::Repository secret NETLIFY_ACCESS_TOKEN is not set."
+            missing=1
+          fi
+          # Without these, the Netlify CLI falls back to an interactive "link this
+          # folder to a site" prompt, which hangs the runner instead of failing.
+          [ "$missing" -eq 0 ] || exit 1
+
+          # Same reason: surface a bad-but-present secret here rather than at the
+          # deploy step. Only a definitively rejected token is treated as fatal, so
+          # this check can never fail a deploy that would otherwise have succeeded.
+          status=$(curl -s -o /dev/null -w '%{http_code}' \
+            -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN" \
+            "https://api.netlify.com/api/v1/sites/$NETLIFY_SITE_ID")
+          case "$status" in
+            200)
+              echo "Netlify credentials verified." ;;
+            401|403)
+              echo "::error::Netlify rejected the token (HTTP $status). Check the NETLIFY_ACCESS_TOKEN secret."
+              exit 1 ;;
+            *)
+              echo "::warning::Could not confirm site $NETLIFY_SITE_ID (HTTP $status); continuing and letting the Netlify CLI decide." ;;
+          esac
+
+      - name: Use Node.js 22.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+
+      - name: Install Netlify
+        run: npm i -g netlify-cli@18.1.0
+
+      - name: Deploy to Netlify
+        id: netlify_deploy
+        env:
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_ACCESS_TOKEN }}
+        run: |
+          netlify deploy \
+            --prod \
+            --dir . \
+            --message "Deploy ${{ github.sha }}" \
+            < /dev/null
