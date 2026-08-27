@@ -44,19 +44,27 @@
 
     /* ---------- modal media (single image or slideshow) ---------- */
 
+    /* Fill the panel, show the whole picture, crop nothing. A service can
+     * override this with its own modal.media.imgClass - swap contain for
+     * cover there to let one picture fill the panel edge to edge. The
+     * default has to be spelled out on every image because maya.css falls
+     * back to object-fit:cover, and only Bootstrap's !important utility
+     * beats it on the narrow layout where the desktop rules do not run. */
+    var DEFAULT_IMG_CLASS = 'img-fluid h-100 w-100 object-fit-contain';
+
     function mediaHtml(media) {
         if (!media) return '';
 
         if (media.type === 'image') {
             return '<img src="' + R.esc(media.src) + '"' +
-                R.attr('class', media.imgClass || 'img-fluid h-100 w-100 object-fit-cover') +
+                R.attr('class', media.imgClass || DEFAULT_IMG_CLASS) +
                 ' alt="">';
         }
 
         var slides = R.map(media.slides, function (slide) {
             return '<div class="swiper-slide">' +
                 '<img src="' + R.esc(slide.src) + '"' +
-                R.attr('class', media.imgClass) +
+                R.attr('class', media.imgClass || DEFAULT_IMG_CLASS) +
                 ' alt=""' +
                 R.attr('style', slide.style) +
                 '></div>';

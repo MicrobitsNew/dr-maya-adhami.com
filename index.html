@@ -273,23 +273,27 @@
         /* ---- Service modals: image is fixed, only the text column scrolls ---- */
         @media only screen and (min-width: 768px) {
 
-            /* cap the modal so each column can handle its own overflow.
+            /* One fixed height for every service modal, so the dialog is
+               the same size whichever service you open and the picture
+               panel is a known shape instead of whatever that service's
+               text happened to need. It used to be max-height, which let
+               the text drive the height - a short description gave the
+               image a 420px panel, a long one gave it 765px, and the
+               same photo appeared at wildly different sizes.
                nowrap keeps image + text side by side (every table is now
                inside the text column, so the row only ever has 2 children) */
             .modal[id^="serviceModal"] .modal-content>.row {
-                max-height: 85vh;
+                height: min(85vh, 760px);
                 flex-wrap: nowrap;
             }
 
-            /* stop very short modals collapsing */
-            .modal[id^="serviceModal"] .modal-content>.row {
-                min-height: 420px;
-            }
-
-            /* image / slideshow column - clipped, never scrolls */
+            /* image / slideshow column - clipped, never scrolls.
+               White, so the margins around a picture whose shape does not
+               match the panel blend into the modal instead of showing as
+               a band beside the image. */
             .modal[id^="serviceModal"] .modal-content>.row>.col-md-6:first-child {
                 position: relative;
-                max-height: 85vh;
+                height: 100%;
                 overflow: hidden;
                 background-color: #fff;
             }
@@ -314,6 +318,9 @@
 
             /* "contain" = the WHOLE picture is always visible. Nothing is ever
                cropped, which matters for before/after comparisons.
+               This is only the fallback: what actually decides it is the
+               object-fit-* utility in modal.media.imgClass in
+               data/services.json, because Bootstrap marks those !important.
                max-height:none overrides maya.css .modal-content img {max-height:670px} */
             .modal[id^="serviceModal"] .modal-content>.row>.col-md-6:first-child img {
                 display: block;
@@ -323,16 +330,9 @@
                 object-fit: contain;
             }
 
-            /* Opt a service into edge-to-edge cropping with "fit": "cover" in
-               services.json. Only use it where losing the edges is harmless -
-               never on before/after images. */
-            .modal[id^="serviceModal"] .modal-content>.row>.col-md-6.fit-cover img {
-                object-fit: cover;
-            }
-
             /* text column - the only thing that scrolls */
             .modal[id^="serviceModal"] .text-box {
-                max-height: 85vh;
+                height: 100%;
                 overflow-y: auto;
                 overflow-x: hidden;
                 scrollbar-width: thin;

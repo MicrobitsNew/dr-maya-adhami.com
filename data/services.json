@@ -4,7 +4,7 @@
     "images": "Each service keeps its pictures in images/services/<service-title>/ - e.g. Botox uses images/services/botox/. A new service gets a new folder named after its title, lowercased and hyphenated. See images/README.md.",
     "enabled": "Set \"enabled\": false to hide a service (card + modal) without deleting it. That is the JSON equivalent of commenting the markup out.",
     "media": "modal.media.type is either 'image' (single picture) or 'swiper' (slideshow). For 'swiper', swiperClass must match the class the init script in index.html uses.",
-    "fit": "By default the whole picture is shown, never cropped - correct for before/after comparisons. Add \"fit\": \"cover\" next to \"type\" in modal.media to make that service's images fill the panel edge to edge instead, cropping whatever does not fit. Only do that for plain photos.",
+    "fit": "Every modal is the same size and every picture is shown whole, never cropped - set by object-fit-contain in modal.media.imgClass. Swap that one word for object-fit-cover on a single service to make its picture fill the panel edge to edge instead, losing whatever does not fit. Only do that for a plain photo, never for a before/after.",
     "table": "modal.table.position is 'inside' (table sits in the text column, under the description - this is what every service uses) or 'outside' (table sits full width under both columns - not used by anything right now).",
     "tableCells": "A cell is either a plain string, or an object like { \"text\": \"SVR\", \"rowspan\": 8 } for merged cells."
   },
@@ -276,7 +276,7 @@
         "media": {
           "type": "swiper",
           "swiperClass": "journey-swiper h-100",
-          "imgClass": "img-fluid h-100 w-100 object-fit-cover",
+          "imgClass": "img-fluid h-100 w-100 object-fit-contain",
           "slides": [
             {
               "src": "images/services/biostimulators/4.webp",
@@ -421,7 +421,7 @@
         "media": {
           "type": "image",
           "src": "images/services/exosomes/7.webp",
-          "imgClass": "img-fluid h-100 w-100 object-fit-cover"
+          "imgClass": "img-fluid h-100 w-100 object-fit-contain"
         },
         "body": [
           "Exosomes represent a fascinating and a new revolutionary cutting-edge innovation in the field of regenerative medicine and biotechnology. These tiny, extracellular vesicles play a crucial role in intercellular communication and messaging and are increasingly recognized for their therapeutic potential and biostimulating effects. They can be injected into the skin or combined with the Scarlet S radiotherapy microneedling for superior results and minimal downtime."
@@ -530,7 +530,7 @@
         "media": {
           "type": "image",
           "src": "images/services/regular-facial-and-masks/10-inside.webp",
-          "imgClass": "img-fluid h-100 w-100 object-fit-cover"
+          "imgClass": "img-fluid h-100 w-100 object-fit-contain"
         },
         "body": [
           "Indulge in a rejuvenating skincare experience with our personalized facial treatments and specialized masks, designed to restore your skin's natural radiance. Our expert aestheticians tailor each treatment to your unique skincare needs, combining deep cleansing, hydration, brightening, and gentle detoxification for a refreshed complexion. Complementing the facial, our revitalizing face and eye masks help reduce puffiness, soften fine lines, and combat signs of fatigue, leaving your skin nourished, refreshed, and glowing."
@@ -560,7 +560,7 @@
         "media": {
           "type": "image",
           "src": "images/services/masks/11.webp",
-          "imgClass": "img-fluid h-100 w-100 object-fit-cover"
+          "imgClass": "img-fluid h-100 w-100 object-fit-contain"
         },
         "body": [
           "Indulge in a transformative skincare experience with our revitalizing Facial Mask and Eye Mask Treatment. Crafted to cater to your specific skin needs, our specialized face masks offer hydration, brightening, and gentle detoxification, promoting a radiant complexion. Simultaneously, our rejuvenating eye masks target puffiness, fine lines, and signs of fatigue around your eyes, providing a soothing and revitalizing experience."
@@ -590,7 +590,7 @@
         "media": {
           "type": "image",
           "src": "images/services/mesotherapy/12.webp",
-          "imgClass": "img-fluid h-100 w-100 object-fit-cover"
+          "imgClass": "img-fluid h-100 w-100 object-fit-contain"
         },
         "body": [
           "A specialized treatment designed to address and revitalize the delicate skin around the eyes. Made of non cross linked hyaluronic acid, antioxidants and natural ingredients added to a whitening solution and administered with precision by our skilled professionals, this gentle mesotherapy targets concerns such as fine lines, puffiness, and dark circles.<br><br>Total number of sessions 3 separated by a 2-week interval"
@@ -615,7 +615,7 @@
         "media": {
           "type": "image",
           "src": "images/services/fat-dissolving-injections/13.webp",
-          "imgClass": "img-fluid h-100 w-100 object-fit-cover"
+          "imgClass": "img-fluid h-100 w-100 object-fit-contain"
         },
         "body": [
           "Discover the transformative benefits of our Fat Dissolving Injections. Our specialized injections are designed to target and reduce unwanted fat deposits, providing a non-surgical solution for a more sculpted and contoured appearance.<br><br>Total number of sessions 4 – 6 separated by 1-month interval."
@@ -640,7 +640,7 @@
         "media": {
           "type": "image",
           "src": "images/services/spherofill/14.webp",
-          "imgClass": "img-fluid h-100 w-100 object-fit-cover"
+          "imgClass": "img-fluid h-100 w-100 object-fit-contain"
         },
         "body": [
           "Experience the targeted solution for cellulite with Spherofill Cell—a specialized treatment for cellulite circles or dimples. To begin your transformative journey, a consultation with Dr. Maya Adhami is required. Trust in the expertise of our professionals to provide a tailored plan, allowing you to rediscover smoother, more even skin. Say goodbye to cellulite circles with the precision of Spherofill Cell which works via a radiofrequency related probe that enters the skin and detaches cellulite fibers. Done under local anesthesia, the procedure also entails injecting a mesotherapy serum that boosts your skin and further dissolves cellulite. Spherofill cell is designed to enhance your confidence and redefine your skin's appearance."
@@ -675,7 +675,7 @@
         "media": {
           "type": "image",
           "src": "images/services/excision-of-lesions/15.webp",
-          "imgClass": "img-fluid h-100 w-100 object-fit-cover"
+          "imgClass": "img-fluid h-100 w-100 object-fit-contain"
         },
         "body": [
           "Take the first step towards healthier skin with our Excision of Lesions service. This comprehensive offering includes the expert removal of lesions, along with a detailed pathology report for a thorough understanding of your skin health. To begin the process, a consultation with Dr. Maya Adhami is required. Trust in the expertise of our skilled professionals to address your specific concerns and guide you towards achieving clear, radiant skin through precise lesion excision."
@@ -742,7 +742,7 @@
         "media": {
           "type": "image",
           "src": "images/services/skin-care-products/17.webp",
-          "imgClass": "img-fluid h-100 w-100 object-fit-cover"
+          "imgClass": "img-fluid h-100 w-100 object-fit-contain"
         },
         "body": [
           "Extend your results beyond the clinic with a curated selection of medical-grade skincare, hand-picked by Dr. Maya Adhami to complement your in-clinic treatments and care for your skin between sessions.<br><br>We carry trusted names including Fillmed Skin Perfusion, Profhilo, MD:Ceuticals, PCA Skin, SVR, Hydrinity and Cicabiafine — covering everything from gentle cleansers and antioxidant serums to targeted eye care, brightening formulas and broad-spectrum sun protection. During your consultation we build a simple, effective routine around your skin type and concerns, so that every product you take home has a purpose."
