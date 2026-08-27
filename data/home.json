@@ -4,6 +4,7 @@
     "enabled": "Set \"enabled\": false on any slide, image, list item or block to hide it without deleting it. That is the JSON equivalent of commenting the markup out.",
     "lineBreaks": "A newline inside a text value becomes a <br> on the page.",
     "hero": "hero.slides all share hero.overlay - the gradient painted over the photo. Give a single slide its own \"overlay\" to override it.",
+    "form": "contact.form.netlify sends submissions to the Netlify dashboard. Adding or renaming a field here is only half the job - the matching name must also go in the hidden registration form at the bottom of index.html, or Netlify will drop it. The console warns you if the two drift apart.",
     "icons": "An icon is either a Font Awesome class (\"fas fa-map-marker-alt\") or a path to an image (\"images/contact/icon-phone.svg\"). The renderer works out which."
   },
 
@@ -175,9 +176,18 @@
 
     "form": {
       "title": "Send a Message",
-      "action": "#",
+      "action": "/",
       "method": "POST",
       "submitLabel": "submit now",
+      "successMessage": "Message Sent Successfully!",
+      "errorMessage": "Sorry, your message could not be sent. Please try again.",
+
+      "netlify": {
+        "enabled": true,
+        "name": "contact",
+        "honeypot": "bot-field"
+      },
+
       "fields": [
         { "id": "fname", "name": "fname", "type": "text", "placeholder": "First Name", "required": true, "col": "col-md-6" },
         { "id": "lname", "name": "lname", "type": "text", "placeholder": "Last Name", "required": true, "col": "col-md-6" },

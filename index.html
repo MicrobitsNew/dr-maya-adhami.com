@@ -545,6 +545,29 @@
 
 
     <!-- ================================================================
+         NETLIFY FORM REGISTRATION
+         Netlify discovers forms by parsing this file when the site is
+         deployed. The real contact form is built in the browser from
+         data/home.json, so Netlify never sees it - this hidden copy is
+         what registers the form and its field names.
+
+         It is never shown and never submitted. Its only job is to list
+         the same name="" values as contact.form.fields in data/home.json.
+         Add a field there and add it here too, or Netlify drops it;
+         js/home-render.js warns in the console if the two drift apart.
+         ================================================================ -->
+    <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+        <input type="hidden" name="form-name" value="contact">
+        <input type="text" name="bot-field">
+        <input type="text" name="fname">
+        <input type="text" name="lname">
+        <input type="text" name="phone">
+        <input type="email" name="email">
+        <textarea name="message"></textarea>
+    </form>
+
+
+    <!-- ================================================================
          SERVICE MODALS
          Generated from data/services.json by js/services-render.js.
          Each service in that file produces one modal here.

@@ -257,24 +257,28 @@
 	});
 
 	function submitForm(){
-		/* Ajax call to submit form */
+		/* Posts to whatever the form's own action is - "/" on Netlify,
+		 * where the hidden form-name field routes the entry to the right
+		 * form in the dashboard. Netlify answers with a 200 and the page
+		 * HTML rather than a status string, so the HTTP status is what
+		 * decides success here. Configured in data/home.json under
+		 * contact.form. */
 		$.ajax({
 			type: "POST",
-			url: "form-process.php",
-			data: $contactform.serialize(),
-			success : function(text){
-				if (text === "success"){
-					formSuccess();
-				} else {
-					submitMSG(false,text);
-				}
-			}
+			url: $contactform.attr("action") || "/",
+			data: $contactform.serialize()
+		})
+		.done(function(){
+			formSuccess();
+		})
+		.fail(function(){
+			submitMSG(false, $contactform.data("error-message") || "Sorry, your message could not be sent. Please try again.");
 		});
 	}
 
 	function formSuccess(){
 		$contactform[0].reset();
-		submitMSG(true, "Message Sent Successfully!")
+		submitMSG(true, $contactform.data("success-message") || "Message Sent Successfully!")
 	}
 
 	function submitMSG(valid, msg){

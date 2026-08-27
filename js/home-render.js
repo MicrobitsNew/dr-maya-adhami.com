@@ -253,14 +253,36 @@
             '</div>';
     }
 
+    /* Netlify routes a submission by the form-name field in the body, and
+     * screens out bots with a field a human never sees but a scraper
+     * fills in. Both only make sense when netlify is switched on. */
+    function netlifyFieldsHtml(netlify) {
+        if (!R.isOn(netlify)) return '';
+
+        var honeypot = netlify.honeypot
+            ? '<p class="d-none"><label>Leave this empty: ' +
+                '<input name="' + R.esc(netlify.honeypot) + '" tabindex="-1" autocomplete="off"></label></p>'
+            : '';
+
+        return '<input type="hidden" name="form-name" value="' + R.esc(netlify.name) + '">' + honeypot;
+    }
+
     function formHtml(form) {
+        var netlify = form.netlify;
+        var on = R.isOn(netlify);
+
         return '' +
             '<div class="contact-form">' +
                 '<div class="section-title">' +
                     '<h2 class="text-anime-style-3">' + text(form.title) + '</h2>' +
                 '</div>' +
                 '<form id="contactForm" action="' + R.esc(form.action || '#') + '" ' +
-                        'method="' + R.esc(form.method || 'POST') + '" data-toggle="validator" class="wow fadeInUp">' +
+                        'method="' + R.esc(form.method || 'POST') + '" data-toggle="validator" class="wow fadeInUp"' +
+                        (on ? ' name="' + R.esc(netlify.name) + '" data-netlify="true"' : '') +
+                        (on && netlify.honeypot ? ' data-netlify-honeypot="' + R.esc(netlify.honeypot) + '"' : '') +
+                        R.attr('data-success-message', form.successMessage) +
+                        R.attr('data-error-message', form.errorMessage) + '>' +
+                    netlifyFieldsHtml(netlify) +
                     '<div class="row">' +
                         R.map(form.fields, fieldHtml) +
                         '<div class="col-lg-12">' +
@@ -305,6 +327,40 @@
             '</div>';
     }
 
+    /* ---------- Netlify stub check ---------- */
+
+    /* Netlify finds a form by parsing the deployed HTML at build time.
+     * This one is built from JSON in the browser, so Netlify never sees
+     * it - the hidden copy at the bottom of index.html is what actually
+     * registers the form and its fields. If the two drift apart a new
+     * field just silently never reaches the dashboard, so check. */
+    function checkNetlifyStub(form) {
+        var netlify = form.netlify;
+        if (!R.isOn(netlify)) return;
+
+        var stub = document.querySelector('form[name="' + netlify.name + '"][data-netlify][hidden]');
+        if (!stub) {
+            console.warn('[contact] no hidden registration form named "' + netlify.name +
+                '" in the page HTML - Netlify will not register this form. See index.html.');
+            return;
+        }
+
+        var declared = Array.prototype.map.call(
+            stub.querySelectorAll('[name]'),
+            function (field) { return field.getAttribute('name'); }
+        );
+
+        var missing = R.on(form.fields)
+            .map(function (field) { return field.name; })
+            .filter(function (name) { return declared.indexOf(name) === -1; });
+
+        if (missing.length) {
+            console.warn('[contact] ' + missing.join(', ') + ' — in data/home.json but missing from the hidden ' +
+                'registration form in index.html, so Netlify will drop ' +
+                (missing.length > 1 ? 'these fields' : 'this field') + '.');
+        }
+    }
+
     /* ---------- render ---------- */
 
     window.homeReady = R.section(DATA_URL, function (data) {
@@ -312,6 +368,8 @@
         R.fill('#about-maya', aboutMayaHtml(data.aboutMaya || {}));
         R.fill('#about-clinic', aboutClinicHtml(data.aboutClinic || {}));
         R.fill('#contact', contactHtml(data.contact || {}));
+
+        checkNetlifyStub((data.contact || {}).form || {});
         return data;
     });
 })(window, document);
