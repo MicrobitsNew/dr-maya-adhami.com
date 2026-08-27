@@ -1,0 +1,190 @@
+{
+  "_readme": {
+    "whatThisIs": "Every word and picture on the home page except the services, which live in data/services.json.",
+    "enabled": "Set \"enabled\": false on any slide, image, list item or block to hide it without deleting it. That is the JSON equivalent of commenting the markup out.",
+    "lineBreaks": "A newline inside a text value becomes a <br> on the page.",
+    "hero": "hero.slides all share hero.overlay - the gradient painted over the photo. Give a single slide its own \"overlay\" to override it.",
+    "icons": "An icon is either a Font Awesome class (\"fas fa-map-marker-alt\") or a path to an image (\"images/contact/icon-phone.svg\"). The renderer works out which."
+  },
+
+  "hero": {
+    "autoplayDelay": 2500,
+    "speed": 1000,
+    "overlay": "linear-gradient(to right, rgba(92, 107, 192, 1) 45%, rgba(92, 107, 192, 0.1) 100%)",
+    "slides": [
+      {
+        "enabled": true,
+        "image": "images/hero/hero1.webp",
+        "eyebrow": "Welcome to Verdun Clinic By",
+        "title": "Dr. Maya Adhami",
+        "text": "Verdun Clinic by Dr. Maya Adhami is a premier destination for facial aesthetics, combining medical expertise with artistic precision. Our personalized treatments are designed to rejuvenate, restore, and enhance your natural features with elegant, natural-looking results.",
+        "button": { "label": "Get Started", "href": "#contact" }
+      },
+      {
+        "enabled": true,
+        "image": "images/hero/hero2.webp",
+        "eyebrow": "Welcome to Verdun Clinic By",
+        "title": "Dr. Maya Adhami",
+        "text": "Verdun Clinic by Dr. Maya Adhami is a premier destination for facial aesthetics, combining medical expertise with artistic precision. Our personalized treatments are designed to rejuvenate, restore, and enhance your natural features with elegant, natural-looking results.",
+        "button": { "label": "Get Started", "href": "#contact" }
+      }
+    ]
+  },
+
+  "aboutMaya": {
+    "eyebrow": "about",
+    "title": "Dr. Maya Adhami",
+    "text": "Dr. Maya Adhami is an ENT and Facial Aesthetics specialist with advanced fellowship training in France and over a decade of experience in facial rejuvenation and facial plastic surgery. She is dedicated to delivering natural, refined results through a personalized, evidence-based approach. Recognized as a pioneer in facial aesthetics, she was featured in Forbes Healthcare Middle East in April 2018 for her contributions to the field.",
+
+    "highlights": [
+      {
+        "enabled": false,
+        "icon": "fa-solid fa-graduation-cap fa-2x white-icon",
+        "title": "Education",
+        "text": "Received a Biology degree from the American University of Beirut. Then I furthered my medical education at the University of Balamand, specializing in Ear, Nose, and Throat and Head & Neck surgery at the Saint George Hospital University Medical Center."
+      },
+      {
+        "enabled": false,
+        "icon": "fa-solid fa-user-doctor fa-2x white-icon",
+        "title": "Fellowship",
+        "text": "Pursued my fellowship in rhinology and facial plastic surgery in Paris, at the University of Paris Descartes and University Paris 12, where I became a member of the European Academy of Facial Plastic Surgery."
+      }
+    ],
+
+    "images": [
+      { "enabled": true, "src": "images/about-maya/3.webp", "class": "approach-img-1", "reveal": true },
+      { "enabled": false, "src": "images/about-maya/2.webp", "class": "approach-img-2", "reveal": false }
+    ],
+
+    "supportBox": {
+      "enabled": false,
+      "icon": "images/contact/icon-phone.svg",
+      "title": "24/7 Support",
+      "label": "(+22) 123 456 789",
+      "href": "tel:123456789"
+    }
+  },
+
+  "aboutClinic": {
+    "eyebrow": "Welcome To",
+    "title": "Verdun Clinic",
+    "lead": "Where a commitment to excellence meets a passion for personalized care?",
+
+    "gallery": {
+      "autoplayDelay": 3000,
+      "images": [
+        { "enabled": true, "src": "images/about-clinic/1.webp" },
+        { "enabled": true, "src": "images/about-clinic/2.webp" },
+        { "enabled": false, "src": "images/about-clinic/3.webp" },
+        { "enabled": false, "src": "images/about-clinic/4.webp" },
+        { "enabled": true, "src": "images/about-clinic/5.webp" },
+        { "enabled": true, "src": "images/about-clinic/6.webp" },
+        { "enabled": true, "src": "images/about-clinic/7.webp" },
+        { "enabled": true, "src": "images/about-clinic/8.webp" },
+        { "enabled": true, "src": "images/about-clinic/9.webp" },
+        { "enabled": true, "src": "images/about-clinic/10.webp" },
+        { "enabled": true, "src": "images/about-clinic/11.webp" },
+        { "enabled": true, "src": "images/about-clinic/12.webp" },
+        { "enabled": true, "src": "images/about-clinic/13.webp" },
+        { "enabled": true, "src": "images/about-clinic/14.webp" },
+        { "enabled": true, "src": "images/about-clinic/15.webp" },
+        { "enabled": false, "src": "images/about-clinic/16.webp" }
+      ]
+    },
+
+    "highlights": [
+      {
+        "icon": "fas fa-map-marker-alt",
+        "text": "Nestled in the heart of Beirut, in the vibrant district of Verdun, our clinic stands as a beacon of health and wellness."
+      },
+      {
+        "icon": "fas fa-notes-medical",
+        "text": "From advanced medical services to cutting-edge cosmetic treatments, we provide a comprehensive range of healthcare solutions."
+      },
+      {
+        "icon": "fas fa-user-md",
+        "text": "Our team of dedicated professionals, led by Dr. Maya Adhami, ensures a welcoming environment where your well-being comes first."
+      },
+      {
+        "icon": "fas fa-hand-holding-heart",
+        "text": "Experience the synergy of expertise, innovation, and compassion at Verdun Clinic—a place where your journey to optimal health and beauty begins."
+      }
+    ],
+
+    "button": { "label": "contact us", "href": "#contact" }
+  },
+
+  "contact": {
+    "title": "Reach out!",
+    "text": "Need guidance or expert care? Get in touch with us today for personalized attention and top-quality service.",
+
+    "info": [
+      {
+        "enabled": true,
+        "color": "blue",
+        "wowDelay": "0.6s",
+        "icon": "images/contact/icon-phone.svg",
+        "title": "Phone:",
+        "lines": [
+          { "text": "(+961) 123 456 789", "href": "tel:+123456789" },
+          { "text": "(+961) 123 456 789", "href": "tel:+123456789" }
+        ]
+      },
+      {
+        "enabled": true,
+        "color": "orange",
+        "wowDelay": "0.8s",
+        "icon": "images/contact/icon-mail.svg",
+        "title": "Email:",
+        "lines": [
+          { "text": "email@emailcom", "href": "mailto:" },
+          { "text": "email@email.com", "href": "mailto:" }
+        ]
+      },
+      {
+        "enabled": true,
+        "color": "purple",
+        "wowDelay": "1s",
+        "icon": "fa-solid fa-location-dot contact-icon",
+        "title": "Location:",
+        "lines": [
+          {
+            "text": "Beirut\nLebanon",
+            "href": "https://maps.google.com/?q=Verdun,+Beirut,+Lebanon",
+            "target": "_blank"
+          }
+        ]
+      },
+      {
+        "enabled": true,
+        "color": "pink",
+        "wowDelay": "0.4s",
+        "icon": "images/contact/icon-open-hour.svg",
+        "title": "Open Hours:",
+        "lines": [
+          { "text": "Mon-Sat:\n8:00AM - 6:00PM" }
+        ]
+      }
+    ],
+
+    "map": {
+      "enabled": false,
+      "wowDelay": "1s",
+      "src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3184.014059024065!2d35.54158037555152!3d33.852407273232785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151f17675d302925%3A0x9db9f5afafc3b8e5!2sMicrobits%20Digital%20Agency!5e1!3m2!1sen!2slb!4v1760087637417!5m2!1sen!2slb"
+    },
+
+    "form": {
+      "title": "Send a Message",
+      "action": "#",
+      "method": "POST",
+      "submitLabel": "submit now",
+      "fields": [
+        { "id": "fname", "name": "fname", "type": "text", "placeholder": "First Name", "required": true, "col": "col-md-6" },
+        { "id": "lname", "name": "lname", "type": "text", "placeholder": "Last Name", "required": true, "col": "col-md-6" },
+        { "id": "phone", "name": "phone", "type": "text", "placeholder": "Phone No.", "required": true, "col": "col-md-6" },
+        { "id": "email", "name": "email", "type": "email", "placeholder": "Email Address", "required": true, "col": "col-md-6" },
+        { "id": "message", "name": "message", "type": "textarea", "placeholder": "Write Message...", "rows": 4, "col": "col-md-12" }
+      ]
+    }
+  }
+}

@@ -1,0 +1,434 @@
+:root {
+  --bg-color: #e8eaf6;
+}
+
+.main-logo {
+  height: 60px;
+  width: 210px;
+}
+
+.main-menu .nav-menu-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.main-menu .navbar-nav {
+  display: flex;
+  gap: 20px;
+}
+
+header.main-header .header-sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: var(--white-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease;
+}
+
+header.main-header .header-sticky.hide {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.navbar {
+  padding: 5px 20px;
+}
+
+.section-title h3::before {
+  content: none;
+}
+
+.section-title h3 {
+  padding-left: 0px;
+}
+
+.header-fullwidth {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.bg-section {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.main-header,
+.header-sticky,
+.main-header .bg-section {
+  border-radius: 0 0 10px 10px;
+}
+
+.hero.hero-bg-image {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  border-radius: 0;
+}
+
+.our-approach {
+  background: none;
+}
+
+.our-services {
+  background: var(--bg-color);
+}
+
+.our-journey-image {
+  position: relative;
+}
+
+.our-journey {
+  background-image: none;
+}
+
+.journey-swiper-prev,
+.journey-swiper-next {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: #fff;
+  pointer-events: none;
+}
+
+.our-journey-image:hover .journey-swiper-prev,
+.our-journey-image:hover .journey-swiper-next {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.journey-swiper-prev,
+.journey-swiper-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  cursor: pointer;
+  font-size: 24px;
+  color: var(--primary-color);
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.journey-swiper-prev:hover,
+.journey-swiper-next:hover {
+  background: var(--primary-color) !important;
+  color: white !important;
+}
+
+.journey-swiper-prev {
+  left: 10px;
+}
+
+.journey-swiper-next {
+  right: 10px;
+}
+
+.journey-item {
+  width: unset;
+}
+
+.icon-box i {
+  font-size: 30px;
+  color: var(--primary-color);
+  z-index: 1000;
+}
+
+.journey-img a {
+  pointer-events: auto;
+  display: block;
+  z-index: 5;
+}
+
+.main-footer {
+  background-image: none;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% auto;
+  padding: 30px 0;
+  margin-bottom: 0 !important;
+  border-radius: 15px 0 0;
+}
+
+.service-image a {
+  cursor: pointer !important;
+}
+
+.footer-social-icons {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.footer-social-icons .social-icon {
+  color: #fff;
+  font-size: 20px;
+  transition:
+    transform 0.3s,
+    color 0.3s;
+}
+
+.footer-social-icons .social-icon:hover {
+  color: var(--accent-color);
+  transform: scale(1.2);
+}
+
+.footer-copyright-text a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-copyright-text a:hover {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.contact-info-item,
+.contact-form {
+  background-color: var(--bg-color);
+}
+
+.btn-default::before {
+  content: none;
+}
+
+.icon-box i.white-icon {
+  color: #ffffff !important;
+}
+
+.professional-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.professional-list li {
+  position: relative;
+  padding-left: 35px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.3;
+  color: white;
+  border-bottom: 1px solid #ddd;
+}
+
+.professional-list li:last-child {
+  border-bottom: none;
+}
+
+.professional-list .list-icon {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: white;
+}
+
+.journey-item-content h3 {
+  font-size: 17px;
+}
+
+.section-title {
+  margin-bottom: 30px;
+}
+
+.our-journey-body {
+  margin-bottom: 20px;
+}
+
+.services-navigation.navigation-1 .journey-swiper-prev,
+.services-navigation.navigation-2 .journey-swiper-prev,
+.services-navigation.navigation-1 .journey-swiper-next,
+.services-navigation.navigation-2 .journey-swiper-next {
+  opacity: 1 !important;
+  z-index: 1000 !important;
+  pointer-events: initial !important;
+}
+
+.services-navigation.navigation-1 .journey-swiper-prev,
+.services-navigation.navigation-2 .journey-swiper-prev {
+  left: 0px !important;
+  top: 42%;
+}
+
+.services-navigation.navigation-1 .journey-swiper-next,
+.services-navigation.navigation-2 .journey-swiper-next {
+  right: 0px !important;
+  top: 42%;
+}
+
+.service-item {
+  height: 500px !important;
+}
+
+.list-dot {
+  color: var(--primary-color);
+  margin-right: 10px;
+  font-size: 8px;
+  margin-top: 3px;
+}
+
+.modal-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  margin: 20px 0;
+}
+
+.modal-table thead {
+  background-color: var(--accent-color);
+  color: #fff;
+}
+
+.modal-table th,
+.modal-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.modal-table tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+.modal-table th {
+  font-weight: 600;
+}
+
+.modal-table td {
+  font-weight: 400;
+  color: #333;
+  font-size: 14px;
+}
+
+.modal-content img {
+  max-height: 670px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.adjusted-table.modal-table {
+  /* width: 80%;
+    margin: 30px 0;
+    margin-left: 110px; */
+}
+
+.hero.hero-bg-image {
+  background: url(../images/hero/hero.webp) no-repeat;
+}
+
+.hero.hero-bg-image::before {
+  opacity: 45%;
+}
+
+.service-item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.service-item .service-image {
+  margin-top: auto;
+}
+
+.service-item .service-image img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+}
+
+@media (max-width: 567px) {
+  .adjusted-table.modal-table {
+    /* margin-left: 50px; */
+  }
+
+  .main-footer .row {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .footer-social-icons {
+    justify-content: center;
+  }
+
+  .footer-copyright-text p {
+    font-size: 0.85rem;
+  }
+
+  .hero.hero-bg-image {
+    /* background-position: -854px 44px !important; */
+  }
+}
+
+/* Google map moved underneath the contact info boxes */
+.contact-map-bottom {
+  margin-top: 30px;
+}
+
+.contact-map-bottom iframe {
+  width: 100%;
+  height: 320px;
+  border: 0;
+  border-radius: 20px;
+  display: block;
+}
+
+/* Service modal close button — keep it above the slider image and
+   visible on any background (fixes missing X on mobile) */
+.modal .btn-close {
+  z-index: 1056;
+  width: 38px;
+  height: 38px;
+  opacity: 1;
+  background-color: #fff;
+  border-radius: 50%;
+  background-size: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.modal .btn-close:hover,
+.modal .btn-close:focus {
+  opacity: 1;
+  background-color: #f1f1f1;
+}
+
+/* These three were a patch for the Filler modal only. They are now handled
+   for EVERY service modal by the rules in index.html, and the first one
+   actively broke Filler: "height: 100%" resolves to auto against the row
+   (which has no fixed height), and since the slideshow is now absolutely
+   positioned the column had no in-flow content left - so it collapsed to
+   zero height and the images disappeared.
+
+#serviceModal2 .col-md-6 {
+  height: 100%;
+}
+
+#serviceModal2 .swiper {
+  height: 100%;
+}
+
+#serviceModal2 .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+*/
+
+.contact-form {
+  border-radius: 40px !important;
+}

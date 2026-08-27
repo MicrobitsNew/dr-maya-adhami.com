@@ -1,0 +1,99 @@
+{
+  "_readme": {
+    "whatThisIs": "The whole products page. Each entry in 'categories' produces one filter tab, one heading in the All view, and its own cards.",
+    "howToAdd": "Copy a category or a product object and fill it in. Order in the arrays = order on the page. 'slug' must be unique and is what the filter tab matches on.",
+    "enabled": "Set \"enabled\": false on a category or a product to hide it without deleting it. That is the JSON equivalent of commenting the markup out.",
+    "images": "A product without an \"image\" renders as a text-only card - the CSS already handles that case. Each brand keeps its pictures in images/products/<brand-label>/ - e.g. images/products/svr/. A new brand gets a new folder named after its label, lowercased and hyphenated. See images/README.md."
+  },
+
+  "eyebrow": "Products",
+  "title": "Our Range of Products",
+  "allTabLabel": "All",
+
+  "categories": [
+    {
+      "slug": "skin",
+      "label": "Fillmed Skin Perfusion",
+      "enabled": true,
+      "products": [
+        { "image": "images/products/fillmed-skin-perfusion/1.webp", "name": "Fillmed Skin Perfusion B3 Recovery" },
+        { "image": "images/products/fillmed-skin-perfusion/2.webp", "name": "Fillmed Skin Perfusion HxR eye cream" },
+        { "image": "images/products/fillmed-skin-perfusion/3.webp", "name": "Fillmed Skin Perfusion C Light" },
+        { "image": "images/products/fillmed-skin-perfusion/4.webp", "name": "Fillmed Skin Perfusion Time Booster" }
+      ]
+    },
+    {
+      "slug": "profhilo",
+      "label": "Profhilo",
+      "enabled": true,
+      "products": [
+        { "image": "images/products/profhilo/8.webp", "name": "Profhilo Hyaluronic Acid Bioremodeling", "enabled": false },
+        { "image": "images/products/profhilo/31.webp", "name": "Profhilo Haenkenium Cream" },
+        { "image": "images/products/profhilo/32.webp", "name": "Profhilo Pura Micellar" }
+      ]
+    },
+    {
+      "slug": "md",
+      "label": "MD: Ceuticals",
+      "enabled": true,
+      "products": [
+        { "image": "images/products/md-ceuticals/5.webp", "name": "MD:Ceuticals 3D Moisturizing Sunscreen" },
+        { "image": "images/products/md-ceuticals/6.webp", "name": "MD:Ceuticals X:treme Skin Renewal" },
+        { "image": "images/products/md-ceuticals/7.webp", "name": "MD:Ceuticals Phytic:antiox eye contour" }
+      ]
+    },
+    {
+      "slug": "cicabiafine",
+      "label": "Cicabiafine",
+      "enabled": true,
+      "products": [
+        { "image": "images/products/cicabiafine/22.webp", "name": "Cicabiafine Hydratant" }
+      ]
+    },
+    {
+      "slug": "svr",
+      "label": "SVR",
+      "enabled": true,
+      "products": [
+        { "image": "images/products/svr/9.webp", "name": "SVR Secure Cream" },
+        { "image": "images/products/svr/10.webp", "name": "SVR Ampoule A" },
+        { "image": "images/products/svr/11.webp", "name": "SVR Ampoule B" },
+        { "image": "images/products/svr/12.webp", "name": "SVR Ampoule C" },
+        { "image": "images/products/svr/13.webp", "name": "SVR Sebiaclear" },
+        { "image": "images/products/svr/14.webp", "name": "SVR Ampoule Refresh" },
+        { "image": "images/products/svr/33.webp", "name": "SVR Blur sunscreen" },
+        { "image": "images/products/svr/34.webp", "name": "SVR Blur tinted sunscreen" }
+      ]
+    },
+    {
+      "slug": "pca",
+      "label": "PCA Skin",
+      "enabled": true,
+      "products": [
+        { "image": "images/products/pca-skin/15.webp", "name": "PCA Skin Hyaluronic Acid Lip Booster" },
+        { "image": "images/products/pca-skin/16.webp", "name": "PCA Skin Hyaluronic Acid boosting serum" },
+        { "image": "images/products/pca-skin/17.webp", "name": "PCA Skin Sheer tint broad spectrum spf 45" },
+        { "image": "images/products/pca-skin/21.webp", "name": "PCA Skin Weightless Protection Broad Spectrum spf 45" },
+        { "image": "images/products/pca-skin/18.webp", "name": "PCA Skin Hyaluronic Acid overnight mask" },
+        { "image": "images/products/pca-skin/19.webp", "name": "PCA Skin Silk coat balm" },
+        { "image": "images/products/pca-skin/20.webp", "name": "PCA Skin Pigment bar" }
+      ]
+    },
+    {
+      "slug": "alpha",
+      "label": "Hydrinity",
+      "enabled": true,
+      "products": [
+        { "image": "images/products/hydrinity/23.webp", "name": "Hydrinity Hyacyn Active" },
+        { "image": "images/products/hydrinity/24.webp", "name": "Hydrinity Restorative HA serum" },
+        { "image": "images/products/hydrinity/35.webp", "name": "Hydrinity Renewing HA Serum" },
+        { "image": "images/products/hydrinity/25.webp", "name": "Hydrinity Eye Renew Complex Serum" },
+        { "image": "images/products/hydrinity/26.webp", "name": "Hydrinity Vivid Brightening Serum" },
+        { "image": "images/products/hydrinity/27.webp", "name": "Hydrinity Hydri-C Moisturizer" },
+        { "image": "images/products/hydrinity/28.webp", "name": "Hydrinity Prelude Facial Treatment Cleanser" },
+        { "image": "images/products/hydrinity/29.webp", "name": "Hydrinity Restorative Kit" },
+        { "image": "images/products/hydrinity/30.webp", "name": "Hydrinity Retaxome" }
+      ]
+    }
+  ]
+}

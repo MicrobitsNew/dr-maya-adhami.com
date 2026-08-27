@@ -1,0 +1,809 @@
+{
+  "_readme": {
+    "howToAdd": "Copy any object in 'services', give it a unique id + modalId, set 'slider' to 1 or 2, and fill in the fields. Order in this array = order on the page.",
+    "images": "Each service keeps its pictures in images/services/<service-title>/ - e.g. Botox uses images/services/botox/. A new service gets a new folder named after its title, lowercased and hyphenated. See images/README.md.",
+    "enabled": "Set \"enabled\": false to hide a service (card + modal) without deleting it. That is the JSON equivalent of commenting the markup out.",
+    "media": "modal.media.type is either 'image' (single picture) or 'swiper' (slideshow). For 'swiper', swiperClass must match the class the init script in index.html uses.",
+    "fit": "By default the whole picture is shown, never cropped - correct for before/after comparisons. Add \"fit\": \"cover\" next to \"type\" in modal.media to make that service's images fill the panel edge to edge instead, cropping whatever does not fit. Only do that for plain photos.",
+    "table": "modal.table.position is 'inside' (table sits in the text column, under the description - this is what every service uses) or 'outside' (table sits full width under both columns - not used by anything right now).",
+    "tableCells": "A cell is either a plain string, or an object like { \"text\": \"SVR\", \"rowspan\": 8 } for merged cells."
+  },
+
+  "section": {
+    "eyebrow": "Services",
+    "title": "Explore our Services"
+  },
+
+  "cardArrowIcon": "images/theme/arrow-white.svg",
+
+  "services": [
+    {
+      "id": 1,
+      "modalId": "serviceModal1",
+      "slider": 1,
+      "enabled": true,
+      "title": "Botox",
+      "cardTitle": "Botox",
+      "cardImage": "images/services/botox/1.webp",
+      "cardExcerpt": "Revitalize your appearance with our expert Botox services...",
+      "wowDelay": "",
+      "modal": {
+        "eyebrow": "Service",
+        "title": "Botox",
+        "media": {
+          "type": "swiper",
+          "swiperClass": "journey-swiper h-100",
+          "imgClass": "img-fluid h-100 w-100 object-fit-contain",
+          "slides": [
+            {
+              "src": "images/services/botox/1-inside.webp",
+              "style": "",
+              "enabled": true
+            },
+            {
+              "src": "images/services/botox/1-2-inside.webp",
+              "style": "",
+              "enabled": true
+            },
+            {
+              "src": "images/services/botox/1-3-inside.webp",
+              "style": "",
+              "enabled": true
+            },
+            {
+              "src": "images/services/botox/1-4-inside.webp",
+              "style": "",
+              "enabled": true
+            },
+            {
+              "src": "images/services/botox/1-5-inside.webp",
+              "style": "",
+              "enabled": true
+            }
+          ]
+        },
+        "body": [
+          "Revitalize your appearance with our expert Botox services, meticulously tailored to enhance your natural beauty, reduce frown lines, forehead wrinkles, and crow's feet while achieving a beautiful and natural brow lift and preserving natural facial expressions. Dr. Maya Adhami offers precision and artistry in every application.<br><br>Botox lasts 3–4 months, with effects often extending up to 6 months, and is typically repeated every 4–6 months."
+        ],
+        "table": {
+          "position": "inside",
+          "class": "adjusted-table modal-table",
+          "head": ["Areas", "Brand"],
+          "rows": [
+            [
+              "Full Upper Face (Forehead, Frown Lines, Crow’s Feet)",
+              "ALLERGAN & Dysport (FDA approved)"
+            ],
+            ["Crow's Feet", "ALLERGAN & Dysport(FDA approved)"],
+            ["Gummy Smile", "ALLERGAN & Dysport(FDA approved)"],
+            [
+              "Lower Face Botox (DAO/Sad Smile + Chin)",
+              "ALLERGAN & Dysport(FDA approved)"
+            ],
+            [
+              "Masseter Botox (Teeth Clenching)",
+              "ALLERGAN & Dysport(FDA approved)"
+            ],
+            ["Neck Botox", "ALLERGAN & Dysport(FDA approved)"],
+            ["Underarm Botox", "ALLERGAN & Dysport(FDA approved)"]
+          ]
+        }
+      }
+    },
+
+    {
+      "id": 2,
+      "modalId": "serviceModal2",
+      "slider": 1,
+      "enabled": true,
+      "title": "Filler",
+      "cardTitle": "Filler",
+      "cardImage": "images/services/filler/2.webp",
+      "cardExcerpt": "Indulge in a transformative and rejuvenating experience with our curated filler services...",
+      "wowDelay": "0.2s",
+      "modal": {
+        "eyebrow": "Service",
+        "title": "Filler",
+        "media": {
+          "type": "swiper",
+          "swiperClass": "journey-swiper h-100",
+          "imgClass": "img-fluid h-100 w-100 object-fit-contain",
+          "slides": [
+            {
+              "src": "images/services/filler/2-3.webp",
+              "style": "",
+              "enabled": false
+            },
+            {
+              "src": "images/services/filler/2-2.webp",
+              "style": "",
+              "enabled": false
+            },
+            {
+              "src": "images/services/filler/2-1.webp",
+              "style": "",
+              "enabled": false
+            },
+            {
+              "src": "images/services/filler/2-4.webp",
+              "style": ""
+            },
+            {
+              "src": "images/services/filler/2-5.webp",
+              "style": "",
+              "enabled": false
+            },
+            {
+              "src": "images/services/filler/2-6.webp",
+              "style": "",
+              "enabled": false
+            },
+            {
+              "src": "images/services/filler/2-7.webp",
+              "style": "",
+              "enabled": false
+            },
+            {
+              "src": "images/services/filler/2-8.webp",
+              "style": ""
+            },
+            {
+              "src": "images/services/filler/2-9.webp",
+              "style": "",
+              "enabled": false
+            },
+            {
+              "src": "images/services/filler/2-10.webp",
+              "style": "",
+              "enabled": false
+            },
+            {
+              "src": "images/services/filler/2-11.webp",
+              "style": ""
+            },
+            {
+              "src": "images/services/filler/2-12.webp",
+              "style": ""
+            }
+          ]
+        },
+        "body": [
+          "Indulge in a rejuvenating experience with our curated filler services, designed to enhance your natural features. We use trusted, high-quality brands and prioritize subtle, natural-looking results.<br><br>Dr. Maya is known for her regenerative facial restoration approach, using fillers with an anti-aging philosophy to achieve a refreshed, youthful look. Her technique focuses on softening signs of fatigue or tension, creating a more vibrant and positive appearance. Dermal Fillers usually last 9-12 months depending on the type used."
+        ],
+        "table": {
+          "position": "inside",
+          "class": "adjusted-table modal-table",
+          "head": ["Areas", "Brand"],
+          "rows": [
+            ["Under eye filler", "Restylane Vital Light"],
+            ["Temple filler", "Restylane + Fillmed Art Filler"],
+            ["Cheek Filler", "Restylane + Fillmed Art Filler"],
+            ["Jawline Filler", "Restylane + Fillmed Art Filler"],
+            ["Chin Filler", "Restylane + Fillmed Art Filler"],
+            ["Lip Filler", "Restylane Kysse"],
+            ["Smoker’s lines", "Restylane Vital Light"],
+            ["Nose Filler", "Restylane + Fillmed Art Filler"],
+            ["Neck Lines", "Restylane"],
+            ["Hands", "Restylane + Fillmed Art Filler"]
+          ]
+        }
+      }
+    },
+
+    {
+      "id": 3,
+      "modalId": "serviceModal3",
+      "slider": 1,
+      "enabled": true,
+      "title": "Skin Boosters",
+      "cardTitle": "Skin Boosters",
+      "cardImage": "images/services/skin-boosters/3.webp",
+      "cardExcerpt": "Immerse yourself in a beautiful hydrating and radiating experience with skin boosters...",
+      "wowDelay": "0.4s",
+      "modal": {
+        "eyebrow": "Service",
+        "title": "Skin Boosters",
+        "media": {
+          "type": "swiper",
+          "swiperClass": "journey-swiper h-100",
+          "imgClass": "img-fluid h-100 w-100 object-fit-contain",
+          "slides": [
+            {
+              "src": "images/services/skin-boosters/3.webp",
+              "style": "",
+              "enabled": false
+            },
+            {
+              "src": "images/services/skin-boosters/3-1.webp",
+              "style": "",
+              "enabled": false
+            },
+            {
+              "src": "images/services/skin-boosters/3-2.webp",
+              "style": ""
+            },
+            {
+              "src": "images/services/skin-boosters/3-3.webp",
+              "style": "",
+              "enabled": false
+            },
+            {
+              "src": "images/services/skin-boosters/3-4.webp",
+              "style": "",
+              "enabled": false
+            }
+          ]
+        },
+        "body": [
+          "Immerse yourself in a beautiful hydrating and radiating experience with skin boosters, a revolutionary injectable designed to stimulate collagen to rejuvenate and revitalize your skin.<br><br>A total of 2 sessions is usually required separated by a month interval."
+        ],
+        "table": {
+          "position": "inside",
+          "class": "modal-table",
+          "head": ["Areas", "Brand"],
+          "rows": [
+            [
+              "Face, eyes",
+              "Profhilo (face, neck or body) with its unique non cross linked HA technology"
+            ],
+            [
+              "Neck",
+              "Amber gold made of HA, peptides and a star ingredient succinic acid which has a brightening effect"
+            ],
+            [
+              "Body",
+              "PDRN (polynucleotides) derived from salmon sperm DNA for face and eyes"
+            ],
+            ["Face, eyes & neck", "NCTF"]
+          ]
+        }
+      }
+    },
+
+    {
+      "id": 4,
+      "modalId": "serviceModal4",
+      "slider": 1,
+      "enabled": true,
+      "title": "Biostimulators",
+      "cardTitle": "Biostimulators",
+      "cardImage": "images/services/biostimulators/4.webp",
+      "cardExcerpt": "Biostimulators are injectables that stimulate your skin's natural collagen and elastin production leading to gradual natural looking results...",
+      "wowDelay": "0.6s",
+      "modal": {
+        "eyebrow": "Service",
+        "title": "Biostimulators",
+        "media": {
+          "type": "swiper",
+          "swiperClass": "journey-swiper h-100",
+          "imgClass": "img-fluid h-100 w-100 object-fit-cover",
+          "slides": [
+            {
+              "src": "images/services/biostimulators/4.webp",
+              "style": "",
+              "enabled": false
+            },
+            {
+              "src": "images/services/biostimulators/4-1.webp",
+              "style": ""
+            },
+            {
+              "src": "images/services/biostimulators/4-2.webp",
+              "style": ""
+            },
+            {
+              "src": "images/services/biostimulators/4-3.webp",
+              "style": ""
+            },
+            {
+              "src": "images/services/biostimulators/4-4.webp",
+              "style": ""
+            },
+            {
+              "src": "images/services/biostimulators/4-5.webp",
+              "style": "",
+              "enabled": false
+            }
+          ]
+        },
+        "body": [
+          "Biostimulators are injectables that stimulate your skin's natural collagen and elastin production leading to gradual natural looking results. They treat skin laxity, sculpt the jawline, restore natural volume loss and lift the face. They address the main root cause of aging and improve skin texture and firmness"
+        ],
+        "table": {
+          "position": "inside",
+          "class": "modal-table",
+          "head": ["Areas", "Brand"],
+          "rows": [["Face", "Sculptra"]]
+        }
+      }
+    },
+
+    {
+      "id": 5,
+      "modalId": "serviceModal5",
+      "slider": 1,
+      "enabled": true,
+      "title": "PRP",
+      "cardTitle": "PRP",
+      "cardImage": "images/services/prp/5-outside.webp",
+      "cardExcerpt": "Experience the rejuvenating power of Platelet-Rich Plasma (PRP) at our clinic...",
+      "wowDelay": "0.8s",
+      "modal": {
+        "eyebrow": "Service",
+        "title": "PRP",
+        "media": {
+          "type": "swiper",
+          "swiperClass": "journey-swiper-5",
+          "slides": [
+            { "src": "images/services/prp/5.webp", "enabled": false },
+            { "src": "images/services/prp/5-1.webp" }
+          ]
+        },
+        "body": [
+          "Experience the rejuvenating power of Platelet-Rich Plasma (PRP) at our clinic, where we offer this cutting-edge treatment for both facial and hair revitalization. It harnesses the regenerative potential of your own plasma that contains growth factors that stimulate natural healing and promote enhanced skin and/or hair vitality.<br><br>PRP (face and/or hair): Total sessions required 3-6 separated by a month interval. We usually combine PRP for the face with the Scarlet radiofrequency microneedling for superior biostimulating results and less downtime."
+        ],
+        "table": {
+          "position": "inside",
+          "class": "modal-table",
+          "head": ["Areas", "Brand"],
+          "rows": [
+            ["Hair", "Regen Lab"],
+            [
+              "Face (combined with Scarlet S Radiofrequency RF microneedling)",
+              "Regen Lab"
+            ]
+          ]
+        }
+      }
+    },
+
+    {
+      "id": 6,
+      "modalId": "serviceModal6",
+      "slider": 1,
+      "enabled": true,
+      "title": "Scarlet S Radiofrequency Microneedling",
+      "cardTitle": "Scarlet S Radiofrequency Microneedling",
+      "cardImage": "images/services/scarlet-s-radiofrequency-microneedling/6.webp",
+      "cardExcerpt": "Elevate your skincare experience with the Scarlet S Radiofrequency (RF) Microneedling...",
+      "wowDelay": "1s",
+      "modal": {
+        "eyebrow": "Service",
+        "title": "Scarlet S Radiofrequency Microneedlings",
+        "media": {
+          "type": "swiper",
+          "swiperClass": "journey-swiper-6",
+          "slides": [
+            {
+              "src": "images/services/scarlet-s-radiofrequency-microneedling/6-inside.webp",
+              "enabled": false
+            },
+            {
+              "src": "images/services/scarlet-s-radiofrequency-microneedling/6-1.webp",
+              "enabled": false
+            },
+            {
+              "src": "images/services/scarlet-s-radiofrequency-microneedling/6-2.webp",
+              "style": ""
+            }
+          ]
+        },
+        "body": [
+          "Elevate your skincare experience with the Scarlet S Radiofrequency (RF) Microneedling, an FDA-approved, state-of-the-art treatment combined with the rejuvenating benefits of mesotherapy. Our clinic is proud to offer this advanced, minimally invasive procedure designed to enhance skin texture, promote collagen production, and address a variety of skin concerns such as acne scars, large pores, fines lines and wrinkles. It also improves jawline contouring, reducing the double chin and snatching the neck."
+        ],
+        "table": {
+          "position": "inside",
+          "class": "modal-table",
+          "head": ["Areas", "Brand"],
+          "rows": [
+            [
+              "Scarlet S Radiofrequency RF microneedling (FDA approved) + mesotherapy face + neck",
+              "Scarlet Radiofrequency Microneedling"
+            ]
+          ]
+        }
+      }
+    },
+
+    {
+      "id": 7,
+      "modalId": "serviceModal7",
+      "slider": 1,
+      "enabled": true,
+      "title": "Exosomes",
+      "cardTitle": "Exosomes",
+      "cardImage": "images/services/exosomes/7.webp",
+      "cardExcerpt": "Exosomes represent a fascinating and a new revolutionary cutting-edge innovation in the field of regenerative medicine and biotechnology...",
+      "wowDelay": "1.2s",
+      "modal": {
+        "eyebrow": "Service",
+        "title": "Exosomes",
+        "media": {
+          "type": "image",
+          "src": "images/services/exosomes/7.webp",
+          "imgClass": "img-fluid h-100 w-100 object-fit-cover"
+        },
+        "body": [
+          "Exosomes represent a fascinating and a new revolutionary cutting-edge innovation in the field of regenerative medicine and biotechnology. These tiny, extracellular vesicles play a crucial role in intercellular communication and messaging and are increasingly recognized for their therapeutic potential and biostimulating effects. They can be injected into the skin or combined with the Scarlet S radiotherapy microneedling for superior results and minimal downtime."
+        ],
+        "table": {
+          "position": "inside",
+          "class": "modal-table",
+          "head": ["Areas", "Brand"],
+          "rows": [
+            ["Hair", "V-tech exosomes (synthetic exosomes Polynucleotides)"],
+            ["Face", "V-tech exosomes combined with Scarlet RF microneedling"]
+          ]
+        }
+      }
+    },
+
+    {
+      "id": 8,
+      "modalId": "serviceModal8",
+      "slider": 1,
+      "enabled": true,
+      "title": "Hydrabeauty Facial",
+      "cardTitle": "Hydrabeauty Facial",
+      "cardImage": "images/services/hydrabeauty-facial/8.webp",
+      "cardExcerpt": "Indulge in the ultimate Hydrabeauty facial experience, a luxurious treatment meticulously crafted to enhance your skin's hydration...",
+      "wowDelay": "1.4s",
+      "modal": {
+        "eyebrow": "Service",
+        "title": "Hydrabeauty Facial",
+        "media": {
+          "type": "swiper",
+          "swiperClass": "journey-swiper-8",
+          "slides": [
+            { "src": "images/services/hydrabeauty-facial/8-1.webp" },
+            { "src": "images/services/hydrabeauty-facial/8-2.webp" }
+          ]
+        },
+        "body": [
+          "Indulge in the Hydrabeauty facial, a luxurious treatment designed to boost hydration and radiance. This pampering session includes deep cleansing, gentle exfoliation and dermabrasion to refresh the skin, followed by advanced serum infusion to target specific concerns and enhance hydration. The treatment is completed with LED light therapy for anti-aging and acne benefits."
+        ],
+        "table": {
+          "position": "inside",
+          "class": "modal-table",
+          "head": ["Areas"],
+          "rows": [["Hydrabeauty Facial"]]
+        }
+      }
+    },
+
+    {
+      "id": 9,
+      "modalId": "serviceModal9",
+      "slider": 2,
+      "enabled": true,
+      "title": "Chemical Peels",
+      "cardTitle": "Chemical Peels",
+      "cardImage": "images/services/chemical-peels/9.webp",
+      "cardExcerpt": "Revitalize your skin with our Chemical Peel, a customizable treatment administered by our skilled professionals...",
+      "wowDelay": "1.4s",
+      "modal": {
+        "eyebrow": "Service",
+        "title": "Chemical Peels",
+        "media": {
+          "type": "swiper",
+          "swiperClass": "journey-swiper-9",
+          "slides": [
+            {
+              "src": "images/services/chemical-peels/9.webp",
+              "enabled": false
+            },
+            { "src": "images/services/chemical-peels/9-3.webp" },
+            { "src": "images/services/chemical-peels/9-4.webp" },
+            { "src": "images/services/chemical-peels/9-2.webp" },
+            { "src": "images/services/chemical-peels/9-1.webp" }
+          ]
+        },
+        "body": [
+          "Revitalize your skin with our customizable chemical peel treatments for a brighter, smoother, and more youthful complexion. We use advanced formulas such as New Melan Peel and Fillmed Skin Perfusion to target concerns including pigmentation, dark spots, and fine lines.<br><br>We also offer the New Melan Body Peel, a specialized treatment for intimate areas. It helps reduce dark spots and hyperpigmentation in areas such as the bikini line and underarms, promoting a more even and radiant skin tone."
+        ],
+        "table": {
+          "position": "inside",
+          "class": "modal-table",
+          "head": ["Areas"],
+          "rows": [
+            ["New melan peel for face and body (fillmed)"],
+            ["New melan day & night cream (fillmed)"],
+            ["Fillmed chemical peel for the face"]
+          ]
+        }
+      }
+    },
+
+    {
+      "id": 10,
+      "modalId": "serviceModal10",
+      "slider": 2,
+      "enabled": true,
+      "title": "Regular Facial & Masks",
+      "cardTitle": "Regular Facial & Masks",
+      "cardImage": "images/services/regular-facial-and-masks/10.webp",
+      "cardExcerpt": "Indulge in a rejuvenating skincare experience with our personalized facial treatments and specialized masks, designed to restore your skin's natural radiance...",
+      "wowDelay": "1.4s",
+      "modal": {
+        "eyebrow": "Service",
+        "title": "Regular Facial & Masks",
+        "media": {
+          "type": "image",
+          "src": "images/services/regular-facial-and-masks/10-inside.webp",
+          "imgClass": "img-fluid h-100 w-100 object-fit-cover"
+        },
+        "body": [
+          "Indulge in a rejuvenating skincare experience with our personalized facial treatments and specialized masks, designed to restore your skin's natural radiance. Our expert aestheticians tailor each treatment to your unique skincare needs, combining deep cleansing, hydration, brightening, and gentle detoxification for a refreshed complexion. Complementing the facial, our revitalizing face and eye masks help reduce puffiness, soften fine lines, and combat signs of fatigue, leaving your skin nourished, refreshed, and glowing."
+        ],
+        "table": {
+          "position": "inside",
+          "class": "modal-table",
+          "head": ["Areas"],
+          "rows": [["Face"], ["Eye"]]
+        }
+      }
+    },
+
+    {
+      "id": 11,
+      "modalId": "serviceModal11",
+      "slider": 2,
+      "enabled": false,
+      "title": "Masks",
+      "cardTitle": "Masks",
+      "cardImage": "images/services/masks/11.webp",
+      "cardExcerpt": "Indulge in a transformative skincare experience with our revitalizing Facial Mask and Eye Mask Treatment...",
+      "wowDelay": "1.4s",
+      "modal": {
+        "eyebrow": "Service",
+        "title": "Masks",
+        "media": {
+          "type": "image",
+          "src": "images/services/masks/11.webp",
+          "imgClass": "img-fluid h-100 w-100 object-fit-cover"
+        },
+        "body": [
+          "Indulge in a transformative skincare experience with our revitalizing Facial Mask and Eye Mask Treatment. Crafted to cater to your specific skin needs, our specialized face masks offer hydration, brightening, and gentle detoxification, promoting a radiant complexion. Simultaneously, our rejuvenating eye masks target puffiness, fine lines, and signs of fatigue around your eyes, providing a soothing and revitalizing experience."
+        ],
+        "table": {
+          "position": "inside",
+          "class": "modal-table",
+          "head": ["Areas"],
+          "rows": [["Face"], ["Eye"]]
+        }
+      }
+    },
+
+    {
+      "id": 12,
+      "modalId": "serviceModal12",
+      "slider": 2,
+      "enabled": true,
+      "title": "Mesotherapy",
+      "cardTitle": "Mesotherapy",
+      "cardImage": "images/services/mesotherapy/12.webp",
+      "cardExcerpt": "Designed to address and revitalize the delicate skin around the eyes...",
+      "wowDelay": "1.4s",
+      "modal": {
+        "eyebrow": "Service",
+        "title": "Mesotherapy",
+        "media": {
+          "type": "image",
+          "src": "images/services/mesotherapy/12.webp",
+          "imgClass": "img-fluid h-100 w-100 object-fit-cover"
+        },
+        "body": [
+          "A specialized treatment designed to address and revitalize the delicate skin around the eyes. Made of non cross linked hyaluronic acid, antioxidants and natural ingredients added to a whitening solution and administered with precision by our skilled professionals, this gentle mesotherapy targets concerns such as fine lines, puffiness, and dark circles.<br><br>Total number of sessions 3 separated by a 2-week interval"
+        ],
+        "table": null
+      }
+    },
+
+    {
+      "id": 13,
+      "modalId": "serviceModal13",
+      "slider": 2,
+      "enabled": false,
+      "title": "Fat Dissolving injections",
+      "cardTitle": "Fat Dissolving injections",
+      "cardImage": "images/services/fat-dissolving-injections/13.webp",
+      "cardExcerpt": "Discover the transformative benefits of our Fat Dissolving Injections...",
+      "wowDelay": "1.4s",
+      "modal": {
+        "eyebrow": "Service",
+        "title": "Fat Dissolving injections",
+        "media": {
+          "type": "image",
+          "src": "images/services/fat-dissolving-injections/13.webp",
+          "imgClass": "img-fluid h-100 w-100 object-fit-cover"
+        },
+        "body": [
+          "Discover the transformative benefits of our Fat Dissolving Injections. Our specialized injections are designed to target and reduce unwanted fat deposits, providing a non-surgical solution for a more sculpted and contoured appearance.<br><br>Total number of sessions 4 – 6 separated by 1-month interval."
+        ],
+        "table": null
+      }
+    },
+
+    {
+      "id": 14,
+      "modalId": "serviceModal14",
+      "slider": 2,
+      "enabled": false,
+      "title": "Spherofill",
+      "cardTitle": "Spherofill",
+      "cardImage": "images/services/spherofill/14.webp",
+      "cardExcerpt": "Experience the targeted solution for cellulite with Spherofill Cell—a specialized treatment for cellulite circles or dimples...",
+      "wowDelay": "1.4s",
+      "modal": {
+        "eyebrow": "Service",
+        "title": "Spherofill",
+        "media": {
+          "type": "image",
+          "src": "images/services/spherofill/14.webp",
+          "imgClass": "img-fluid h-100 w-100 object-fit-cover"
+        },
+        "body": [
+          "Experience the targeted solution for cellulite with Spherofill Cell—a specialized treatment for cellulite circles or dimples. To begin your transformative journey, a consultation with Dr. Maya Adhami is required. Trust in the expertise of our professionals to provide a tailored plan, allowing you to rediscover smoother, more even skin. Say goodbye to cellulite circles with the precision of Spherofill Cell which works via a radiofrequency related probe that enters the skin and detaches cellulite fibers. Done under local anesthesia, the procedure also entails injecting a mesotherapy serum that boosts your skin and further dissolves cellulite. Spherofill cell is designed to enhance your confidence and redefine your skin's appearance."
+        ],
+        "table": {
+          "position": "inside",
+          "class": "modal-table",
+          "head": ["Areas", "Price"],
+          "rows": [
+            [
+              "Spherofill cell per cellulite circle/dimple",
+              "120 – 150$ per cellulite dimple"
+            ]
+          ]
+        }
+      }
+    },
+
+    {
+      "id": 15,
+      "modalId": "serviceModal15",
+      "slider": 2,
+      "enabled": true,
+      "title": "Excision of lesions",
+      "cardTitle": "Excision of lesions",
+      "cardImage": "images/services/excision-of-lesions/15.webp",
+      "cardExcerpt": "Take the first step towards healthier skin with our Excision of Lesions service...",
+      "wowDelay": "1.4s",
+      "modal": {
+        "eyebrow": "Service",
+        "title": "Excision of lesions",
+        "media": {
+          "type": "image",
+          "src": "images/services/excision-of-lesions/15.webp",
+          "imgClass": "img-fluid h-100 w-100 object-fit-cover"
+        },
+        "body": [
+          "Take the first step towards healthier skin with our Excision of Lesions service. This comprehensive offering includes the expert removal of lesions, along with a detailed pathology report for a thorough understanding of your skin health. To begin the process, a consultation with Dr. Maya Adhami is required. Trust in the expertise of our skilled professionals to address your specific concerns and guide you towards achieving clear, radiant skin through precise lesion excision."
+        ],
+        "table": {
+          "position": "inside",
+          "class": "modal-table",
+          "head": ["Areas"],
+          "rows": [["Excision of lesions"]]
+        }
+      }
+    },
+
+    {
+      "id": 16,
+      "modalId": "serviceModal16",
+      "slider": 2,
+      "enabled": true,
+      "title": "Laser hair removal",
+      "cardTitle": "Laser hair removal",
+      "cardImage": "images/services/laser-hair-removal/16.webp",
+      "cardExcerpt": "Discover the freedom of smooth, hair-free skin with our Laser Hair Removal services featuring cutting-edge technology...",
+      "wowDelay": "1.4s",
+      "modal": {
+        "eyebrow": "Service",
+        "title": "Laser hair removal",
+        "media": {
+          "type": "swiper",
+          "swiperClass": "journey-swiper-16",
+          "slides": [
+            {
+              "src": "images/services/laser-hair-removal/16.webp",
+              "enabled": false
+            },
+            { "src": "images/services/laser-hair-removal/16-1.webp" },
+            { "src": "images/services/laser-hair-removal/16-2.webp" }
+          ]
+        },
+        "body": [
+          "Discover the freedom of smooth, hair-free skin with our Laser Hair Removal services, powered by cutting-edge technology. At Verdun Clinic, we use the advanced Cynosure Elite+ system, a dual-wavelength laser combining Alexandrite and Nd:YAG technologies. This allows us to safely and effectively treat all skin types with precision, speed, and enhanced comfort. Under the expertise of our skilled professionals, each treatment is fully customized to deliver optimal, long-lasting results. Experience the convenience and confidence of silky-smooth skin with the advanced Elite+ laser at Verdun Clinic."
+        ],
+        "table": {
+          "position": "inside",
+          "class": "modal-table",
+          "head": ["Areas", "Brand"],
+          "rows": [["Elite +", "Cynosure"]]
+        }
+      }
+    },
+
+    {
+      "id": 17,
+      "modalId": "serviceModal17",
+      "slider": 2,
+      "enabled": true,
+      "title": "Skin Care Products",
+      "cardTitle": "Skin Care Products",
+      "cardImage": "images/services/skin-care-products/17.webp",
+      "cardExcerpt": "A curated range of medical-grade skincare, hand-picked to extend and protect your results at home...",
+      "wowDelay": "1.4s",
+      "modal": {
+        "eyebrow": "Service",
+        "title": "Skin Care Products",
+        "media": {
+          "type": "image",
+          "src": "images/services/skin-care-products/17.webp",
+          "imgClass": "img-fluid h-100 w-100 object-fit-cover"
+        },
+        "body": [
+          "Extend your results beyond the clinic with a curated selection of medical-grade skincare, hand-picked by Dr. Maya Adhami to complement your in-clinic treatments and care for your skin between sessions.<br><br>We carry trusted names including Fillmed Skin Perfusion, Profhilo, MD:Ceuticals, PCA Skin, SVR, Hydrinity and Cicabiafine — covering everything from gentle cleansers and antioxidant serums to targeted eye care, brightening formulas and broad-spectrum sun protection. During your consultation we build a simple, effective routine around your skin type and concerns, so that every product you take home has a purpose."
+        ],
+        "table": {
+          "position": "inside",
+          "class": "modal-table",
+          "head": ["Name", "Brand"],
+          "rows": [
+            [
+              "Fillmed Skin Perfusion B3 Recovery",
+              { "text": "Fillmed Skin Perfusion", "rowspan": 4 }
+            ],
+            ["Fillmed Skin Perfusion HxR eye cream"],
+            ["Fillmed Skin Perfusion C Light"],
+            ["Fillmed Skin Perfusion Time Booster"],
+
+            ["Profhilo Haenkenium Cream", { "text": "Profhilo", "rowspan": 2 }],
+            ["Profhilo Pura Micellar"],
+
+            [
+              "MD:Ceuticals 3D Moisturizing Sunscreen",
+              { "text": "MD: Ceuticals", "rowspan": 3 }
+            ],
+            ["MD:Ceuticals X:treme Skin Renewal"],
+            ["MD:Ceuticals Phytic:antiox eye contour"],
+
+            ["Cicabiafine Hydratant", "Cicabiafine"],
+
+            ["SVR Secure Cream", { "text": "SVR", "rowspan": 8 }],
+            ["SVR Ampoule A"],
+            ["SVR Ampoule B"],
+            ["SVR Ampoule C"],
+            ["SVR Sebiaclear"],
+            ["SVR Ampoule Refresh"],
+            ["SVR Blur sunscreen"],
+            ["SVR Blur tinted sunscreen"],
+
+            [
+              "PCA Skin Hyaluronic Acid Lip Booster",
+              { "text": "PCA Skin", "rowspan": 7 }
+            ],
+            ["PCA Skin Hyaluronic Acid boosting serum"],
+            ["PCA Skin Sheer tint broad spectrum spf 45"],
+            ["PCA Skin Weightless Protection Broad Spectrum spf 45"],
+            ["PCA Skin Hyaluronic Acid overnight mask"],
+            ["PCA Skin Silk coat balm"],
+            ["PCA Skin Pigment bar"],
+
+            ["Hydrinity Hyacyn Active", { "text": "Hydrinity", "rowspan": 9 }],
+            ["Hydrinity Restorative HA serum"],
+            ["Hydrinity Renewing HA Serum"],
+            ["Hydrinity Eye Renew Complex Serum"],
+            ["Hydrinity Vivid Brightening Serum"],
+            ["Hydrinity Hydri-C Moisturizer"],
+            ["Hydrinity Prelude Facial Treatment Cleanser"],
+            ["Hydrinity Restorative Kit"],
+            ["Hydrinity Retaxome"]
+          ]
+        }
+      }
+    }
+  ]
+}

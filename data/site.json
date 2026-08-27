@@ -1,0 +1,59 @@
+{
+  "_readme": {
+    "whatThisIs": "Everything that appears on EVERY page: the logo, the menu, the header button and the footer. Edit here once and both index.html and products.html follow.",
+    "enabled": "Set \"enabled\": false on any item to hide it without deleting it. That is the JSON equivalent of commenting the markup out.",
+    "menu": "Order in the array = order in the menu. Give an item a \"children\" array to turn it into a dropdown.",
+    "icons": "An icon is either a Font Awesome class (\"fab fa-instagram\") or a path to an image (\"images/contact/icon-phone.svg\"). The renderer works out which."
+  },
+
+  "brand": {
+    "href": "./",
+    "logo": "images/header/logo.svg",
+    "alt": "Dr. Maya Adhami"
+  },
+
+  "menu": [
+    { "label": "Home", "href": "./" },
+    {
+      "label": "About",
+      "href": "./#",
+      "children": [
+        { "label": "Dr. Maya Adhami", "href": "./#about-maya" },
+        { "label": "Verdun Clinic", "href": "./#about-clinic" }
+      ]
+    },
+    { "label": "Services", "href": "./#services" },
+    { "label": "Products", "href": "products.html" },
+    { "label": "Contact Us", "href": "./#contact" },
+    { "label": "Make an Appointment", "href": "book-appointment.html", "highlighted": true, "enabled": false }
+  ],
+
+  "headerPhone": {
+    "enabled": false,
+    "icon": "fa-solid fa-phone",
+    "label": "(+22) 123 456 789",
+    "href": "tel:123456789"
+  },
+
+  "headerCta": {
+    "label": "Make an Appointment",
+    "href": "./#contact"
+  },
+
+  "footer": {
+    "copyright": "Copyright © 2026 All Rights Reserved.",
+    "poweredBy": {
+      "enabled": false,
+      "prefix": "Powered by",
+      "label": "Microbits",
+      "href": "https://microbits.co/",
+      "target": "_blank"
+    }
+  },
+
+  "social": [
+    { "label": "Facebook", "icon": "fab fa-facebook-f", "href": "https://www.facebook.com", "target": "_blank" },
+    { "label": "Instagram", "icon": "fab fa-instagram", "href": "https://www.instagram.com", "target": "_blank" },
+    { "label": "LinkedIn", "icon": "fab fa-linkedin-in", "href": "https://www.linkedin.com", "target": "_blank" }
+  ]
+}
