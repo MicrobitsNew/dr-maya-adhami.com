@@ -491,10 +491,9 @@
               "src": "images/services/chemical-peels/9.webp",
               "enabled": false
             },
-            { "src": "images/services/chemical-peels/9-3.webp" },
-            { "src": "images/services/chemical-peels/9-4.webp" },
+            { "src": "images/services/chemical-peels/9-1.webp" },
             { "src": "images/services/chemical-peels/9-2.webp" },
-            { "src": "images/services/chemical-peels/9-1.webp" }
+            { "src": "images/services/chemical-peels/9-3.webp" }
           ]
         },
         "body": [
