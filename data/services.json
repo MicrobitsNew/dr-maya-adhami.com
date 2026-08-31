@@ -110,6 +110,10 @@
           "imgClass": "img-fluid h-100 w-100 object-fit-contain",
           "slides": [
             {
+              "src": "images/services/filler/2-12.webp",
+              "style": ""
+            },
+            {
               "src": "images/services/filler/2-3.webp",
               "style": "",
               "enabled": false
@@ -162,7 +166,7 @@
               "style": ""
             },
             {
-              "src": "images/services/filler/2-12.webp",
+              "src": "images/services/filler/2-13.webp",
               "style": ""
             }
           ]
@@ -297,10 +301,6 @@
             },
             {
               "src": "images/services/biostimulators/4-4.webp",
-              "style": ""
-            },
-            {
-              "src": "images/services/biostimulators/4-5.webp",
               "style": ""
             }
           ]
