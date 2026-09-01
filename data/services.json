@@ -469,7 +469,7 @@
       "enabled": true,
       "title": "Hydrabeauty Facial",
       "cardTitle": "Hydrabeauty Facial",
-      "cardImage": "images/services/hydrabeauty-facial/8.webp",
+      "cardImage": "images/services/hydrabeauty-facial/cover.webp",
       "cardExcerpt": "Indulge in the ultimate Hydrabeauty facial experience, a luxurious treatment meticulously crafted to enhance your skin's hydration...",
       "wowDelay": "1.4s",
       "modal": {
@@ -479,8 +479,9 @@
           "type": "swiper",
           "swiperClass": "journey-swiper-8",
           "slides": [
-            { "src": "images/services/hydrabeauty-facial/8-1.webp" },
-            { "src": "images/services/hydrabeauty-facial/8-2.webp" }
+            { "src": "images/services/hydrabeauty-facial/1.webp" },
+            { "src": "images/services/hydrabeauty-facial/2.webp" },
+            { "src": "images/services/hydrabeauty-facial/3.webp" }
           ]
         },
         "body": [
