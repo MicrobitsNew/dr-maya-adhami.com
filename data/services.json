@@ -777,9 +777,27 @@
         "eyebrow": "Service",
         "title": "Skin Care Products",
         "media": {
-          "type": "image",
-          "src": "images/services/skin-care-products/17.webp",
-          "imgClass": "img-fluid h-100 w-100 object-fit-contain"
+          "type": "swiper",
+          "swiperClass": "journey-swiper-17",
+          "imgClass": "img-fluid h-100 w-100 object-fit-contain",
+          "slides": [
+            {
+              "src": "images/services/skin-care-products/1.webp",
+              "style": ""
+            },
+            {
+              "src": "images/services/skin-care-products/2.webp",
+              "style": ""
+            },
+            {
+              "src": "images/services/skin-care-products/3.webp",
+              "style": ""
+            },
+            {
+              "src": "images/services/skin-care-products/4.webp",
+              "style": ""
+            }
+          ]
         },
         "body": [
           "Extend your results beyond the clinic with a curated selection of medical-grade skincare, hand-picked by Dr. Maya Adhami to complement your in-clinic treatments and care for your skin between sessions.<br><br>We carry trusted names including Fillmed Skin Perfusion, Profhilo, MD:Ceuticals, PCA Skin, SVR, Hydrinity and Cicabiafine — covering everything from gentle cleansers and antioxidant serums to targeted eye care, brightening formulas and broad-spectrum sun protection. During your consultation we build a simple, effective routine around your skin type and concerns, so that every product you take home has a purpose."
