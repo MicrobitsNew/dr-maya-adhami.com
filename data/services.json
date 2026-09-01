@@ -113,7 +113,7 @@
       "enabled": true,
       "title": "Filler",
       "cardTitle": "Filler",
-      "cardImage": "images/services/filler/2.webp",
+      "cardImage": "images/services/filler/cover.webp",
       "cardExcerpt": "Indulge in a transformative and rejuvenating experience with our curated filler services...",
       "wowDelay": "0.2s",
       "modal": {
@@ -125,64 +125,74 @@
           "imgClass": "img-fluid h-100 w-100 object-fit-contain",
           "slides": [
             {
-              "src": "images/services/filler/2-12.webp",
+              "src": "images/services/filler/1.webp",
               "style": ""
             },
             {
-              "src": "images/services/filler/2-3.webp",
+              "src": "images/services/filler/2.webp",
+              "style": "",
+              "enabled": true
+            },
+            {
+              "src": "images/services/filler/3.webp",
               "style": "",
               "enabled": false
             },
             {
-              "src": "images/services/filler/2-2.webp",
+              "src": "images/services/filler/4.webp",
               "style": "",
               "enabled": false
             },
             {
-              "src": "images/services/filler/2-1.webp",
-              "style": "",
-              "enabled": false
-            },
-            {
-              "src": "images/services/filler/2-4.webp",
+              "src": "images/services/filler/5.webp",
               "style": ""
             },
             {
-              "src": "images/services/filler/2-5.webp",
+              "src": "images/services/filler/6.webp",
               "style": "",
               "enabled": false
             },
             {
-              "src": "images/services/filler/2-6.webp",
+              "src": "images/services/filler/7.webp",
               "style": "",
-              "enabled": false
+              "enabled": true
             },
             {
-              "src": "images/services/filler/2-7.webp",
+              "src": "images/services/filler/8.webp",
               "style": "",
-              "enabled": false
+              "enabled": true
             },
             {
-              "src": "images/services/filler/2-8.webp",
+              "src": "images/services/filler/9.webp",
               "style": ""
             },
             {
-              "src": "images/services/filler/2-9.webp",
+              "src": "images/services/filler/10.webp",
               "style": "",
-              "enabled": false
+              "enabled": true
             },
             {
-              "src": "images/services/filler/2-10.webp",
+              "src": "images/services/filler/11.webp",
               "style": "",
-              "enabled": false
+              "enabled": true
             },
             {
-              "src": "images/services/filler/2-11.webp",
+              "src": "images/services/filler/12.webp",
               "style": ""
             },
             {
-              "src": "images/services/filler/2-13.webp",
+              "src": "images/services/filler/13.webp",
               "style": ""
+            },
+            {
+              "src": "images/services/filler/14.webp",
+              "style": "",
+              "enabled": true
+            },
+            {
+              "src": "images/services/filler/15.webp",
+              "style": "",
+              "enabled": true
             }
           ]
         },
