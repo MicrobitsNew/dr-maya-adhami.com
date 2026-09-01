@@ -492,7 +492,7 @@
       "enabled": true,
       "title": "Chemical Peels",
       "cardTitle": "Chemical Peels",
-      "cardImage": "images/services/chemical-peels/9.webp",
+      "cardImage": "images/services/chemical-peels/cover.webp",
       "cardExcerpt": "Revitalize your skin with our Chemical Peel, a customizable treatment administered by our skilled professionals...",
       "wowDelay": "1.4s",
       "modal": {
@@ -503,12 +503,13 @@
           "swiperClass": "journey-swiper-9",
           "slides": [
             {
-              "src": "images/services/chemical-peels/9.webp",
+              "src": "images/services/chemical-peels/cover.webp",
               "enabled": false
             },
-            { "src": "images/services/chemical-peels/9-1.webp" },
-            { "src": "images/services/chemical-peels/9-2.webp" },
-            { "src": "images/services/chemical-peels/9-3.webp" }
+            { "src": "images/services/chemical-peels/1.webp" },
+            { "src": "images/services/chemical-peels/2.webp" },
+            { "src": "images/services/chemical-peels/3.webp" },
+            { "src": "images/services/chemical-peels/4.webp" }
           ]
         },
         "body": [
