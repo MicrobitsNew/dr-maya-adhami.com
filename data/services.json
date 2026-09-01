@@ -24,7 +24,7 @@
       "enabled": true,
       "title": "Botox",
       "cardTitle": "Botox",
-      "cardImage": "images/services/botox/1.webp",
+      "cardImage": "images/services/botox/cover.webp",
       "cardExcerpt": "Revitalize your appearance with our expert Botox services...",
       "wowDelay": "",
       "modal": {
@@ -36,27 +36,42 @@
           "imgClass": "img-fluid h-100 w-100 object-fit-contain",
           "slides": [
             {
-              "src": "images/services/botox/1-inside.webp",
+              "src": "images/services/botox/1.webp",
               "style": "",
               "enabled": true
             },
             {
-              "src": "images/services/botox/1-2-inside.webp",
+              "src": "images/services/botox/2.webp",
               "style": "",
               "enabled": true
             },
             {
-              "src": "images/services/botox/1-3-inside.webp",
+              "src": "images/services/botox/3.webp",
               "style": "",
               "enabled": true
             },
             {
-              "src": "images/services/botox/1-4-inside.webp",
+              "src": "images/services/botox/4.webp",
               "style": "",
               "enabled": true
             },
             {
-              "src": "images/services/botox/1-5-inside.webp",
+              "src": "images/services/botox/5.webp",
+              "style": "",
+              "enabled": true
+            },
+            {
+              "src": "images/services/botox/6.webp",
+              "style": "",
+              "enabled": true
+            },
+            {
+              "src": "images/services/botox/7.webp",
+              "style": "",
+              "enabled": true
+            },
+            {
+              "src": "images/services/botox/8.webp",
               "style": "",
               "enabled": true
             }
