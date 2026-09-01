@@ -721,7 +721,7 @@
       "enabled": true,
       "title": "Laser hair removal",
       "cardTitle": "Laser hair removal",
-      "cardImage": "images/services/laser-hair-removal/16.webp",
+      "cardImage": "images/services/laser-hair-removal/cover.webp",
       "cardExcerpt": "Discover the freedom of smooth, hair-free skin with our Laser Hair Removal services featuring cutting-edge technology...",
       "wowDelay": "1.4s",
       "modal": {
@@ -732,11 +732,12 @@
           "swiperClass": "journey-swiper-16",
           "slides": [
             {
-              "src": "images/services/laser-hair-removal/16.webp",
+              "src": "images/services/laser-hair-removal/cover.webp",
               "enabled": false
             },
-            { "src": "images/services/laser-hair-removal/16-1.webp" },
-            { "src": "images/services/laser-hair-removal/16-2.webp" }
+            { "src": "images/services/laser-hair-removal/1.webp" },
+            { "src": "images/services/laser-hair-removal/2.webp" },
+            { "src": "images/services/laser-hair-removal/3.webp" }
           ]
         },
         "body": [
