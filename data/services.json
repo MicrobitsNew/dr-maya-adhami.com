@@ -245,7 +245,7 @@
             {
               "src": "images/services/skin-boosters/1.webp",
               "style": "",
-              "enabled": false
+              "enabled": true
             },
             {
               "src": "images/services/skin-boosters/2.webp",
@@ -258,7 +258,7 @@
             {
               "src": "images/services/skin-boosters/4.webp",
               "style": "",
-              "enabled": false
+              "enabled": true
             }
           ]
         },
