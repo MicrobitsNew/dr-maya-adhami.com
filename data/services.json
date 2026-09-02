@@ -226,7 +226,7 @@
       "enabled": true,
       "title": "Skin Boosters",
       "cardTitle": "Skin Boosters",
-      "cardImage": "images/services/skin-boosters/3.webp",
+      "cardImage": "images/services/skin-boosters/cover.webp",
       "cardExcerpt": "Immerse yourself in a beautiful hydrating and radiating experience with skin boosters...",
       "wowDelay": "0.4s",
       "modal": {
@@ -238,25 +238,25 @@
           "imgClass": "img-fluid h-100 w-100 object-fit-contain",
           "slides": [
             {
+              "src": "images/services/skin-boosters/cover.webp",
+              "style": "",
+              "enabled": false
+            },
+            {
+              "src": "images/services/skin-boosters/1.webp",
+              "style": "",
+              "enabled": false
+            },
+            {
+              "src": "images/services/skin-boosters/2.webp",
+              "style": ""
+            },
+            {
               "src": "images/services/skin-boosters/3.webp",
-              "style": "",
-              "enabled": false
-            },
-            {
-              "src": "images/services/skin-boosters/3-1.webp",
-              "style": "",
-              "enabled": false
-            },
-            {
-              "src": "images/services/skin-boosters/3-2.webp",
               "style": ""
             },
             {
-              "src": "images/services/skin-boosters/3-3.webp",
-              "style": ""
-            },
-            {
-              "src": "images/services/skin-boosters/3-4.webp",
+              "src": "images/services/skin-boosters/4.webp",
               "style": "",
               "enabled": false
             }
@@ -387,7 +387,7 @@
       "enabled": true,
       "title": "Scarlet S Radiofrequency Microneedling",
       "cardTitle": "Scarlet S Radiofrequency Microneedling",
-      "cardImage": "images/services/scarlet-s-radiofrequency-microneedling/6.webp",
+      "cardImage": "images/services/scarlet-s-radiofrequency-microneedling/cover.webp",
       "cardExcerpt": "Elevate your skincare experience with the Scarlet S Radiofrequency (RF) Microneedling...",
       "wowDelay": "1s",
       "modal": {
@@ -398,27 +398,27 @@
           "swiperClass": "journey-swiper-6",
           "slides": [
             {
-              "src": "images/services/scarlet-s-radiofrequency-microneedling/6-inside.webp",
-              "enabled": false
-            },
-            {
-              "src": "images/services/scarlet-s-radiofrequency-microneedling/6-1.webp",
-              "enabled": false
-            },
-            {
-              "src": "images/services/scarlet-s-radiofrequency-microneedling/6-2.webp",
-              "style": ""
-            },
-            {
               "src": "images/services/scarlet-s-radiofrequency-microneedling/1.webp",
-              "style": ""
+              "enabled": false
             },
             {
               "src": "images/services/scarlet-s-radiofrequency-microneedling/2.webp",
-              "style": ""
+              "enabled": false
             },
             {
               "src": "images/services/scarlet-s-radiofrequency-microneedling/3.webp",
+              "style": ""
+            },
+            {
+              "src": "images/services/scarlet-s-radiofrequency-microneedling/4.webp",
+              "style": ""
+            },
+            {
+              "src": "images/services/scarlet-s-radiofrequency-microneedling/5.webp",
+              "style": ""
+            },
+            {
+              "src": "images/services/scarlet-s-radiofrequency-microneedling/6.webp",
               "style": ""
             }
           ]
@@ -770,7 +770,7 @@
       "enabled": true,
       "title": "Skin Care Products",
       "cardTitle": "Skin Care Products",
-      "cardImage": "images/services/skin-care-products/17.webp",
+      "cardImage": "images/services/skin-care-products/cover.webp",
       "cardExcerpt": "A curated range of medical-grade skincare, hand-picked to extend and protect your results at home...",
       "wowDelay": "1.4s",
       "modal": {
