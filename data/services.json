@@ -69,11 +69,6 @@
               "src": "images/services/botox/7.webp",
               "style": "",
               "enabled": true
-            },
-            {
-              "src": "images/services/botox/8.webp",
-              "style": "",
-              "enabled": true
             }
           ]
         },
@@ -145,7 +140,7 @@
             {
               "src": "images/services/filler/5.webp",
               "style": "",
-              "enabled": false
+              "enabled": true
             },
             {
               "src": "images/services/filler/6.webp",
