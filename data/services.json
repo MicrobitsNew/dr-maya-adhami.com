@@ -266,16 +266,16 @@
           "head": ["Areas", "Brand"],
           "rows": [
             [
-              "Face, eyes",
-              "Profhilo (face, neck or body) with its unique non cross linked HA technology"
+              "Face, neck or body",
+              "Profhilo — non-cross-linked HA technology"
             ],
             [
               "Neck",
-              "Amber gold made of HA, peptides and a star ingredient succinic acid which has a brightening effect"
+              "Amber Gold — HA, peptides and succinic acid"
             ],
             [
-              "Body",
-              "PDRN (polynucleotides) derived from salmon sperm DNA for face and eyes"
+              "Face, eyes & neck",
+              "Nucleofill (polynucleotides)"
             ],
             ["Face, eyes & neck", "NCTF"]
           ]
@@ -331,7 +331,10 @@
           "position": "inside",
           "class": "modal-table",
           "head": ["Areas", "Brand"],
-          "rows": [["Face", "Sculptra"]]
+          "rows": [
+            ["Face", "Sculptra"],
+            ["Face", "Profhilo Structura"]
+          ]
         }
       }
     },
@@ -358,7 +361,7 @@
           ]
         },
         "body": [
-          "Experience the rejuvenating power of Platelet-Rich Plasma (PRP) at our clinic, where we offer this cutting-edge treatment for both facial and hair revitalization. It harnesses the regenerative potential of your own plasma that contains growth factors that stimulate natural healing and promote enhanced skin and/or hair vitality.<br><br>PRP (face and/or hair): Total sessions required 3-6 separated by a month interval. We usually combine PRP for the face with the Scarlet radiofrequency microneedling for superior biostimulating results and less downtime."
+          "Experience the rejuvenating power of Platelet-Rich Plasma (PRP) at our clinic, where we offer this cutting-edge treatment for both facial and hair revitalization. It harnesses the regenerative potential of your own plasma that contains growth factors that stimulate natural healing and promote enhanced skin and/or hair vitality.<br><br>PRP (face and/or hair): Total sessions required 3-6 separated by a month interval. We usually combine PRP for the face with the Scarlet radiofrequency microneedling for superior biostimulating results and less downtime.<br><br>For hair, treatment options include PRP alone or PRP combined with exosomes."
         ],
         "table": {
           "position": "inside",
@@ -626,7 +629,17 @@
         "body": [
           "A specialized treatment designed to address and revitalize the delicate skin around the eyes. Made of non cross linked hyaluronic acid, antioxidants and natural ingredients added to a whitening solution and administered with precision by our skilled professionals, this gentle mesotherapy targets concerns such as fine lines, puffiness, and dark circles.<br><br>Total number of sessions 3 separated by a 2-week interval"
         ],
-        "table": null
+        "table": {
+          "position": "inside",
+          "class": "modal-table",
+          "head": ["Products / Brands"],
+          "rows": [
+            ["MD:Ceuticals – Melanoceuticals"],
+            ["NCTF"],
+            ["V-Tech Exosomes ± PDRN"],
+            ["Polynucleotides"]
+          ]
+        }
       }
     },
 
