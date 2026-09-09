@@ -112,7 +112,11 @@
       }
     ],
 
-    "button": { "label": "contact us", "href": "#contact" }
+    "button": {
+      "label": "Apply for a Voucher",
+      "href": "#giftVoucherModal",
+      "modalId": "giftVoucherModal"
+    }
   },
 
   "contact": {
@@ -194,6 +198,44 @@
         { "id": "phone", "name": "phone", "type": "text", "placeholder": "Phone No.", "required": true, "col": "col-md-6" },
         { "id": "email", "name": "email", "type": "email", "placeholder": "Email Address", "required": true, "col": "col-md-6" },
         { "id": "message", "name": "message", "type": "textarea", "placeholder": "Write Message...", "rows": 4, "col": "col-md-12" }
+      ]
+    }
+  },
+
+  "voucher": {
+    "title": "Apply for a Gift Voucher",
+    "text": "Choose the recipient, treatment and value. Our team will contact you to confirm the details and arrange payment.",
+    "preview": {
+      "logo": "images/voucher/voucher-logo-v2.webp",
+      "logoAlt": "Verdun Clinic by Dr. Maya Adhami",
+      "flower": "images/voucher/voucher-flower.webp",
+      "instagramLabel": "drmayaadhami",
+      "instagramHref": "https://www.instagram.com/drmayaadhami/?hl=en"
+    },
+    "terms": [
+      "Voucher cannot be redeemed for cash.",
+      "Voucher cannot be combined with other promotions or offers.",
+      "One voucher per person."
+    ],
+    "form": {
+      "action": "/",
+      "method": "POST",
+      "submitLabel": "Submit Application",
+      "successMessage": "Thank you! Your voucher application was sent successfully. We will contact you shortly.",
+      "errorMessage": "Sorry, your application could not be sent. Please try again.",
+      "netlify": {
+        "enabled": true,
+        "name": "gift-voucher",
+        "honeypot": "bot-field"
+      },
+      "fields": [
+        { "id": "voucher-from", "name": "from_name", "label": "From", "type": "text", "placeholder": "Your full name", "autocomplete": "name", "required": true, "col": "col-md-6" },
+        { "id": "voucher-to", "name": "to_name", "label": "To", "type": "text", "placeholder": "Recipient's full name", "required": true, "col": "col-md-6" },
+        { "id": "voucher-email", "name": "email", "label": "Your Email", "type": "email", "placeholder": "you@example.com", "autocomplete": "email", "required": true, "col": "col-md-6" },
+        { "id": "voucher-phone", "name": "phone", "label": "Your Phone", "type": "tel", "placeholder": "+961", "autocomplete": "tel", "required": true, "col": "col-md-6" },
+        { "id": "voucher-service", "name": "service", "label": "Entitled For A Service Of", "type": "text", "placeholder": "Treatment or service", "required": true, "col": "col-md-6" },
+        { "id": "voucher-value", "name": "value", "label": "Valued At", "type": "text", "placeholder": "e.g. $100", "required": true, "col": "col-md-6" },
+        { "id": "voucher-message", "name": "message", "label": "Personal Message (Optional)", "type": "textarea", "placeholder": "Add a short message for the recipient", "rows": 2, "col": "col-md-12" }
       ]
     }
   }

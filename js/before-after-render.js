@@ -26,7 +26,11 @@
     var R = window.SiteRender;
     var DATA_URL = 'data/before-after.json';
     var HOST = '#before-after';
-    var GROUP = 'before-after';
+    /* Deliberately NOT "before-after": Fancybox's Hash plugin opens the
+     * gallery whose group name matches the URL hash, so a group named
+     * after the section would hijack the "#before-after" menu link and
+     * pop the first image open instead of just scrolling there. */
+    var GROUP = 'ba-gallery';
     var HIDDEN = 'ba-item-hidden';
 
     /* ---------- caption ---------- */
@@ -129,6 +133,10 @@
         Fancybox.unbind(selector);
         Fancybox.bind(selector, {
             groupAll: false,
+            /* Keep the lightbox out of the URL entirely. Left on, it
+             * rewrites the hash to "#<group>-<n>" while open, which
+             * fights the in-page anchor links in the header menu. */
+            Hash: false,
             Images: { zoom: false },
             Toolbar: { display: { left: [], middle: [], right: ['close'] } }
         });

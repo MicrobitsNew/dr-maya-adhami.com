@@ -23,6 +23,7 @@
       ]
     },
     { "label": "Services", "href": "./#services" },
+    { "label": "Before & After", "href": "./#before-after" },
     { "label": "Products", "href": "products.html" },
     { "label": "Contact Us", "href": "./#contact" },
     { "label": "Make an Appointment", "href": "book-appointment.html", "highlighted": true, "enabled": false }
@@ -53,7 +54,7 @@
 
   "social": [
     { "label": "Facebook", "icon": "fab fa-facebook-f", "href": "https://www.facebook.com", "target": "_blank" },
-    { "label": "Instagram", "icon": "fab fa-instagram", "href": "https://www.instagram.com", "target": "_blank" },
+    { "label": "Instagram", "icon": "fab fa-instagram", "href": "https://www.instagram.com/drmayaadhami/?hl=en", "target": "_blank" },
     { "label": "LinkedIn", "icon": "fab fa-linkedin-in", "href": "https://www.linkedin.com", "target": "_blank" }
   ]
 }

@@ -31,7 +31,13 @@
 	/* Slick Menu JS */
 	$('#menu').slicknav({
 		label : '',
-		prependTo : '.responsive-menu'
+		prependTo : '.responsive-menu',
+		/* Most of the menu points at #anchors on this same page, so a tap
+		 * scrolls without reloading and the open panel would otherwise sit
+		 * there covering the section it just jumped to. Parent items like
+		 * "About" are excluded by slicknav itself, so they still open their
+		 * submenu instead of closing the menu. */
+		closeOnClick : true
 	});
 
 	if($("a[href='#top']").length){
@@ -290,6 +296,53 @@
 		$("#msgSubmit").removeClass().addClass(msgClasses).text(msg);
 	}
 	/* Contact form validation end */
+
+	/* Gift voucher form validation */
+	var $voucherForm = $("#voucherForm");
+	if ($voucherForm.length) {
+		$voucherForm.validator({focus: false}).on("submit", function (event) {
+			if (!event.isDefaultPrevented()) {
+				event.preventDefault();
+				submitVoucherForm();
+			}
+		});
+	}
+
+	function submitVoucherForm(){
+		var $submitButton = $voucherForm.find('[type="submit"]');
+		var $submitLabel = $submitButton.find("span");
+		var originalLabel = $submitLabel.text();
+		$submitButton.prop("disabled", true).addClass("is-submitting");
+		$voucherForm.attr("aria-busy", "true");
+		$submitLabel.text("Sending...");
+		voucherSubmitMSG(null, "");
+
+		$.ajax({
+			type: "POST",
+			url: $voucherForm.attr("action") || "/",
+			data: $voucherForm.serialize()
+		})
+		.done(function(){
+			$voucherForm[0].reset();
+			voucherSubmitMSG(true, $voucherForm.data("success-message") || "Your voucher application was sent successfully.");
+		})
+		.fail(function(){
+			voucherSubmitMSG(false, $voucherForm.data("error-message") || "Sorry, your application could not be sent. Please try again.");
+		})
+		.always(function(){
+			$submitButton.prop("disabled", false).removeClass("is-submitting");
+			$voucherForm.removeAttr("aria-busy");
+			$submitLabel.text(originalLabel);
+		});
+	}
+
+	function voucherSubmitMSG(valid, msg){
+		var msgClasses = "voucher-form-message";
+		if (valid === true) msgClasses += " text-success";
+		if (valid === false) msgClasses += " text-danger";
+		$("#voucherMsgSubmit").removeClass().addClass(msgClasses).text(msg);
+	}
+	/* Gift voucher form validation end */
 
 	/* Appointment form validation */
 	var $appointmentForm = $("#appointmentForm");

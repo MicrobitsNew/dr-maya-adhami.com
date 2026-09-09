@@ -1,7 +1,7 @@
 /* ------------------------------------------------------------------
  * home-render.js
  * Builds the home page - hero, "about Dr. Maya", "about the clinic"
- * and the contact block - from data/home.json.
+ * the contact block and gift-voucher modal - from data/home.json.
  *
  * The services section is NOT here; it has its own data file and
  * renderer (data/services.json + js/services-render.js).
@@ -25,8 +25,15 @@
 
     function buttonHtml(button, className) {
         if (!R.isOn(button)) return '';
+
+        var modalAttributes = button.modalId
+            ? ' data-bs-toggle="modal" data-bs-target="#' + R.esc(button.modalId) + '"' +
+                ' role="button" aria-controls="' + R.esc(button.modalId) + '"'
+            : '';
+
         return '<a href="' + R.esc(button.href || '#') + '" class="' +
-            R.esc(className || 'btn-default') + '">' + R.esc(button.label) + '</a>';
+            R.esc(className || 'btn-default') + '"' + modalAttributes + '>' +
+            R.esc(button.label) + '</a>';
     }
 
     /* ---------- hero ---------- */
@@ -327,6 +334,100 @@
             '</div>';
     }
 
+    /* ---------- gift voucher ---------- */
+
+    function voucherFieldHtml(field) {
+        var required = field.required ? ' required=""' : '';
+        var describedBy = R.esc(field.id) + '-errors';
+        var common = ' name="' + R.esc(field.name) + '" class="form-control"' +
+            ' id="' + R.esc(field.id) + '" placeholder="' + R.esc(field.placeholder || '') + '"' +
+            R.attr('autocomplete', field.autocomplete) +
+            ' aria-describedby="' + describedBy + '"' + required;
+
+        var control = field.type === 'textarea'
+            ? '<textarea' + common + ' rows="' + R.esc(field.rows || 3) + '"></textarea>'
+            : '<input type="' + R.esc(field.type || 'text') + '"' + common + '>';
+
+        return '<div class="voucher-field form-group ' + R.esc(field.col || 'col-md-12') + '">' +
+            '<label for="' + R.esc(field.id) + '">' + text(field.label) +
+                (field.required ? '<span aria-hidden="true"> *</span>' : '') + '</label>' +
+            control +
+            '<div id="' + describedBy + '" class="help-block with-errors"></div>' +
+            '</div>';
+    }
+
+    function voucherPreviewHtml(preview) {
+        preview = preview || {};
+        return '<div class="voucher-preview-panel">' +
+            '<div class="voucher-preview-art">' +
+                '<img class="voucher-brand-logo" src="' + R.esc(preview.logo) + '"' +
+                    ' alt="' + R.esc(preview.logoAlt || 'Verdun Clinic by Dr. Maya Adhami') + '">' +
+                '<h3>Gift Voucher</h3>' +
+                '<img class="voucher-flower" src="' + R.esc(preview.flower) + '" alt="" aria-hidden="true">' +
+                '<a class="voucher-instagram" href="' + R.esc(preview.instagramHref) + '"' +
+                        ' target="_blank" rel="noopener" aria-label="Dr. Maya Adhami on Instagram">' +
+                    '<i class="fa-brands fa-instagram" aria-hidden="true"></i>' +
+                    '<span>' + R.esc(preview.instagramLabel || 'drmayaadhami') + '</span>' +
+                '</a>' +
+            '</div>' +
+        '</div>';
+    }
+
+    function voucherModalHtml(voucher) {
+        if (!R.isOn(voucher)) return '';
+
+        var form = voucher.form || {};
+        var netlify = form.netlify;
+        var on = R.isOn(netlify);
+        var modalId = 'giftVoucherModal';
+        var titleId = modalId + 'Label';
+        var terms = R.map(voucher.terms, function (term) {
+            return '<li>' + text(term) + '</li>';
+        });
+
+        return '<div class="modal voucher-modal" id="' + modalId + '" tabindex="-1"' +
+                ' aria-labelledby="' + titleId + '" aria-hidden="true">' +
+            '<div class="modal-dialog modal-dialog-centered modal-xl">' +
+                '<div class="modal-content">' +
+                    '<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>' +
+                    '<div class="voucher-modal-layout">' +
+                        voucherPreviewHtml(voucher.preview) +
+                        '<div class="voucher-form-panel">' +
+                            '<span class="voucher-kicker">Verdun Clinic</span>' +
+                            '<h2 id="' + titleId + '">' + text(voucher.title) + '</h2>' +
+                            '<p class="voucher-intro">' + text(voucher.text) + '</p>' +
+                            '<form id="voucherForm" action="' + R.esc(form.action || '#') + '"' +
+                                    ' method="' + R.esc(form.method || 'POST') + '" data-toggle="validator"' +
+                                    (on ? ' name="' + R.esc(netlify.name) + '" data-netlify="true"' : '') +
+                                    (on && netlify.honeypot ? ' data-netlify-honeypot="' + R.esc(netlify.honeypot) + '"' : '') +
+                                    R.attr('data-success-message', form.successMessage) +
+                                    R.attr('data-error-message', form.errorMessage) + '>' +
+                                netlifyFieldsHtml(netlify) +
+                                '<div class="row g-3">' + R.map(form.fields, voucherFieldHtml) + '</div>' +
+                                '<div class="voucher-terms">' +
+                                    '<h3>Terms &amp; Conditions</h3>' +
+                                    '<ul>' + terms + '</ul>' +
+                                '</div>' +
+                                '<div class="form-check voucher-terms-check">' +
+                                    '<input class="form-check-input" type="checkbox" value="yes" name="accepted_terms"' +
+                                        ' id="voucher-accepted-terms" required>' +
+                                    '<label class="form-check-label" for="voucher-accepted-terms">' +
+                                        'I have read and accept the voucher terms.' +
+                                    '</label>' +
+                                    '<div class="help-block with-errors"></div>' +
+                                '</div>' +
+                                '<button type="submit" class="btn-default voucher-submit"><span>' +
+                                    text(form.submitLabel || 'Submit Application') +
+                                '</span></button>' +
+                                '<div id="voucherMsgSubmit" class="voucher-form-message" role="status" aria-live="polite"></div>' +
+                            '</form>' +
+                        '</div>' +
+                    '</div>' +
+                '</div>' +
+            '</div>' +
+        '</div>';
+    }
+
     /* ---------- Netlify stub check ---------- */
 
     /* Netlify finds a form by parsing the deployed HTML at build time.
@@ -334,13 +435,15 @@
      * it - the hidden copy at the bottom of index.html is what actually
      * registers the form and its fields. If the two drift apart a new
      * field just silently never reaches the dashboard, so check. */
-    function checkNetlifyStub(form) {
+    function checkNetlifyStub(form, context) {
         var netlify = form.netlify;
         if (!R.isOn(netlify)) return;
 
+        context = context || 'form';
+
         var stub = document.querySelector('form[name="' + netlify.name + '"][data-netlify][hidden]');
         if (!stub) {
-            console.warn('[contact] no hidden registration form named "' + netlify.name +
+            console.warn('[' + context + '] no hidden registration form named "' + netlify.name +
                 '" in the page HTML - Netlify will not register this form. See index.html.');
             return;
         }
@@ -368,8 +471,10 @@
         R.fill('#about-maya', aboutMayaHtml(data.aboutMaya || {}));
         R.fill('#about-clinic', aboutClinicHtml(data.aboutClinic || {}));
         R.fill('#contact', contactHtml(data.contact || {}));
+        R.fill('#voucher-modal', voucherModalHtml(data.voucher || {}));
 
-        checkNetlifyStub((data.contact || {}).form || {});
+        checkNetlifyStub((data.contact || {}).form || {}, 'contact');
+        checkNetlifyStub((data.voucher || {}).form || {}, 'voucher');
         return data;
     });
 })(window, document);

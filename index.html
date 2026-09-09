@@ -577,6 +577,23 @@
         <textarea name="message"></textarea>
     </form>
 
+    <!-- Netlify registration copy for the JavaScript-rendered voucher form. -->
+    <form name="gift-voucher" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+        <input type="hidden" name="form-name" value="gift-voucher">
+        <input type="text" name="bot-field">
+        <input type="text" name="from_name">
+        <input type="text" name="to_name">
+        <input type="email" name="email">
+        <input type="text" name="phone">
+        <input type="text" name="service">
+        <input type="text" name="value">
+        <textarea name="message"></textarea>
+        <input type="checkbox" name="accepted_terms" value="yes">
+    </form>
+
+    <!-- Gift voucher application modal, generated from data/home.json. -->
+    <div id="voucher-modal"></div>
+
 
     <!-- ================================================================
          SERVICE MODALS

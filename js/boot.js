@@ -50,6 +50,26 @@
         else window.addEventListener('load', hide);
     }
 
+    /* Landing on "index.html#contact" (or any menu anchor) used to stop
+     * at the top of the page: the browser resolves the hash while every
+     * section is still an empty <section> waiting on its JSON, so there
+     * is nothing at that offset yet to scroll to. Re-apply the hash once
+     * the markup exists.
+     *
+     * Skipped if the visitor has already scrolled themselves by then -
+     * jumping the page out from under someone is worse than a missed
+     * anchor. */
+    var moved = false;
+    window.addEventListener('scroll', function () { moved = true; }, { passive: true, once: true });
+
+    function scrollToHash() {
+        var id = (window.location.hash || '').slice(1);
+        if (!id || moved) return;
+
+        var target = document.getElementById(id);
+        if (target) target.scrollIntoView();
+    }
+
     var rendered = Promise.race([
         Promise.all(jobs.map(function (job) {
             return Promise.resolve(job).catch(function () { return null; });
@@ -60,5 +80,8 @@
     window.siteReady = rendered
         .then(function () { return loadScript(THEME_SCRIPT); })
         .catch(function (error) { console.error('[boot]', error); })
-        .then(function () { revealPage(); });
+        .then(function () {
+            revealPage();
+            scrollToHash();
+        });
 })(window, document);
