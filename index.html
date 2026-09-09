@@ -530,6 +530,13 @@
         </div>
     </section>
 
+    <!-- Before & After: built from data/before-after.json by
+         js/before-after-render.js. The cards, captions, the expand
+         control and the lightbox group all come from that file.
+         Do NOT hard-code results here: edit data/before-after.json. -->
+    <section id="before-after"></section>
+
+
     <!-- Verdun Clinic: built from data/home.json ("aboutClinic") by
          js/home-render.js - gallery images and bullet points included. -->
     <section id="about-clinic"></section>
@@ -610,11 +617,13 @@
              data/site.json     - logo, menu, header button, footer
              data/home.json     - hero, about, clinic, contact
              data/services.json - service cards + their modals
+             data/before-after.json - the Before & After gallery
          ================================================================ -->
     <script src="js/render-core.js"></script>
     <script src="js/site-render.js"></script>
     <script src="js/home-render.js"></script>
     <script src="js/services-render.js"></script>
+    <script src="js/before-after-render.js"></script>
 
     <!-- Starts js/function.js once the page is built - otherwise WOW, the
          GSAP reveal and slicknav would run against empty sections - then

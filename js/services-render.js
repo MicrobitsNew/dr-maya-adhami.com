@@ -18,27 +18,33 @@
     function cardHtml(service, arrowIcon) {
         var target = '#' + service.modalId;
         var excerpt = service.cardExcerpt ? '<p>' + service.cardExcerpt + '</p>' : '';
+        var title = R.esc(service.cardTitle || service.title);
 
         return '' +
             '<div class="swiper-slide">' +
-                '<div class="service-item wow fadeInUp"' + R.attr('data-wow-delay', service.wowDelay) + '>' +
+                '<a href="' + R.esc(target) + '" class="service-item service-card-link wow fadeInUp"' +
+                    R.attr('data-wow-delay', service.wowDelay) +
+                    ' data-bs-toggle="modal" data-bs-target="' + R.esc(target) + '"' +
+                    ' aria-haspopup="dialog" aria-controls="' + R.esc(service.modalId) + '"' +
+                    ' aria-label="See more about ' + title + '">' +
                     '<div class="service-content">' +
                         '<div class="service-content-title">' +
-                            '<h2>' + R.esc(service.cardTitle || service.title) + '</h2>' +
-                            '<a href="#" class="readmore-btn" data-bs-toggle="modal" data-bs-target="' + R.esc(target) + '">' +
-                                '<img src="' + R.esc(arrowIcon) + '" alt="">' +
-                            '</a>' +
+                            '<h2>' + title + '</h2>' +
                         '</div>' +
                         excerpt +
+                        '<span class="service-card-cta">' +
+                            '<span>See more</span>' +
+                            '<span class="readmore-btn service-card-arrow" aria-hidden="true">' +
+                                '<img src="' + R.esc(arrowIcon) + '" alt="">' +
+                            '</span>' +
+                        '</span>' +
                     '</div>' +
                     '<div class="service-image">' +
-                        '<a href="#" data-bs-toggle="modal" data-bs-target="' + R.esc(target) + '">' +
-                            '<figure class="image-anime">' +
-                                '<img src="' + R.esc(service.cardImage) + '" alt="">' +
-                            '</figure>' +
-                        '</a>' +
+                        '<figure class="image-anime">' +
+                            '<img src="' + R.esc(service.cardImage) + '" alt="">' +
+                        '</figure>' +
                     '</div>' +
-                '</div>' +
+                '</a>' +
             '</div>';
     }
 

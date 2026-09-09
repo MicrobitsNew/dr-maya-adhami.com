@@ -1,0 +1,309 @@
+{
+  "_readme": {
+    "howToAdd": "One object in 'results' = one before/after card. Order in this array = order on the page. Copy an entry, point 'src' at the new collage and fill in the fields.",
+    "images": "Every collage is a finished 1200x1200 WebP: Before on the LEFT, After on the RIGHT, lavender label bar across the top. It lives in its service folder under images/services/<service-title>/ - the same folder the service modal uses. See images/README.md.",
+    "enabled": "Set \"enabled\": false to hide one result without deleting it. Keep it false until the clinical details, consent, caption and final image have all been approved.",
+    "service": "Must match the service title in data/services.json character for character, so the caption matches the service page.",
+    "area": "Treatment area, e.g. \"Glabella\". Shown after the service name. LEFT EMPTY ON PURPOSE - nothing is published until the clinic approves it. 'areaToConfirm' holds an editorial guess read off the image; it is never rendered. To publish one, move the approved wording into 'area' and delete 'areaToConfirm'.",
+    "sessionsTiming": "Optional second caption line, e.g. sessions \"1 session\" and timing \"2 weeks after treatment\". Both are omitted unless filled in - never publish a count or a timing that has not been verified.",
+    "section": "'initialRows' is how many GRID ROWS show before the visitor expands. The grid is 3 columns on desktop, 2 on tablet and 1 on mobile, so two rows means 6, 4 and 2 cards - the renderer counts the columns itself. {count} in expandLabel is replaced with the number of enabled results."
+  },
+  "section": {
+    "eyebrow": "Real Results",
+    "title": "Before & After",
+    "intro": "Explore real patient results from treatments performed by Dr. Maya Adhami. Images are published with patient consent. Results vary from person to person.",
+    "initialRows": 2,
+    "expandLabel": "Show all {count} results",
+    "collapseLabel": "Show fewer"
+  },
+  "results": [
+    {
+      "src": "images/services/botox/1.webp",
+      "service": "Botox",
+      "area": "",
+      "areaToConfirm": "Glabella / frown lines",
+      "sessions": "",
+      "timing": "",
+      "enabled": true
+    },
+    {
+      "src": "images/services/botox/2.webp",
+      "service": "Botox",
+      "area": "",
+      "areaToConfirm": "Glabella / frown lines",
+      "sessions": "",
+      "timing": "",
+      "enabled": true
+    },
+    {
+      "src": "images/services/botox/3.webp",
+      "service": "Botox",
+      "area": "",
+      "areaToConfirm": "Glabella / frown lines",
+      "sessions": "",
+      "timing": "",
+      "enabled": true
+    },
+    {
+      "src": "images/services/botox/4.webp",
+      "service": "Botox",
+      "area": "",
+      "areaToConfirm": "Upper face / eye and brow area",
+      "sessions": "",
+      "timing": "",
+      "enabled": true
+    },
+    {
+      "src": "images/services/botox/5.webp",
+      "service": "Botox",
+      "area": "",
+      "areaToConfirm": "Neck bands",
+      "sessions": "",
+      "timing": "",
+      "enabled": true
+    },
+    {
+      "src": "images/services/filler/1.webp",
+      "service": "Filler",
+      "area": "",
+      "areaToConfirm": "Full-face balancing",
+      "sessions": "",
+      "timing": "",
+      "enabled": true
+    },
+    {
+      "src": "images/services/filler/2.webp",
+      "service": "Filler",
+      "area": "",
+      "areaToConfirm": "Lips / perioral area",
+      "sessions": "",
+      "timing": "",
+      "enabled": true
+    },
+    {
+      "src": "images/services/filler/3.webp",
+      "service": "Filler",
+      "area": "",
+      "areaToConfirm": "Nose profile",
+      "sessions": "",
+      "timing": "",
+      "enabled": true
+    },
+    {
+      "src": "images/services/filler/4.webp",
+      "service": "Filler",
+      "area": "",
+      "areaToConfirm": "Under-eye area",
+      "sessions": "",
+      "timing": "",
+      "enabled": true
+    },
+    {
+      "src": "images/services/filler/5.webp",
+      "service": "Filler",
+      "area": "",
+      "areaToConfirm": "Chin profile",
+      "sessions": "",
+      "timing": "",
+      "enabled": true
+    },
+    {
+      "src": "images/services/filler/6.webp",
+      "service": "Filler",
+      "area": "",
+      "areaToConfirm": "Lips",
+      "sessions": "",
+      "timing": "",
+      "enabled": true
+    },
+    {
+      "src": "images/services/filler/7.webp",
+      "service": "Filler",
+      "area": "",
+      "areaToConfirm": "Chin and jawline profile",
+      "sessions": "",
+      "timing": "",
+      "enabled": true
+    },
+    {
+      "src": "images/services/filler/8.webp",
+      "service": "Filler",
+      "area": "",
+      "areaToConfirm": "Full-face balancing",
+      "sessions": "",
+      "timing": "",
+      "enabled": true
+    },
+    {
+      "src": "images/services/filler/9.webp",
+      "service": "Filler",
+      "area": "",
+      "areaToConfirm": "Chin and jawline profile",
+      "sessions": "",
+      "timing": "",
+      "enabled": true
+    },
+    {
+      "src": "images/services/filler/10.webp",
+      "service": "Filler",
+      "area": "",
+      "areaToConfirm": "Lower face / profile balancing",
+      "sessions": "",
+      "timing": "",
+      "enabled": true
+    },
+    {
+      "src": "images/services/filler/11.webp",
+      "service": "Filler",
+      "area": "",
+      "areaToConfirm": "Lips / perioral area",
+      "sessions": "",
+      "timing": "",
+      "enabled": true
+    },
+    {
+      "src": "images/services/filler/12.webp",
+      "service": "Filler",
+      "area": "",
+      "areaToConfirm": "Cheek / facial contour",
+      "sessions": "",
+      "timing": "",
+      "enabled": true
+    },
+    {
+      "src": "images/services/skin-boosters/1.webp",
+      "service": "Skin Boosters",
+      "area": "",
+      "areaToConfirm": "Full face",
+      "sessions": "",
+      "timing": "",
+      "enabled": true
+    },
+    {
+      "src": "images/services/skin-boosters/2.webp",
+      "service": "Skin Boosters",
+      "area": "",
+      "areaToConfirm": "Neck",
+      "sessions": "",
+      "timing": "",
+      "enabled": true
+    },
+    {
+      "src": "images/services/skin-boosters/3.webp",
+      "service": "Skin Boosters",
+      "area": "",
+      "areaToConfirm": "Abdomen / skin texture",
+      "sessions": "",
+      "timing": "",
+      "enabled": true
+    },
+    {
+      "src": "images/services/skin-boosters/4.webp",
+      "service": "Skin Boosters",
+      "area": "",
+      "areaToConfirm": "Under-eye area",
+      "sessions": "",
+      "timing": "",
+      "enabled": true
+    },
+    {
+      "src": "images/services/biostimulators/4-1.webp",
+      "service": "Biostimulators",
+      "area": "",
+      "areaToConfirm": "Full face",
+      "sessions": "",
+      "timing": "",
+      "enabled": true
+    },
+    {
+      "src": "images/services/biostimulators/4-2.webp",
+      "service": "Biostimulators",
+      "area": "",
+      "areaToConfirm": "Full face",
+      "sessions": "",
+      "timing": "",
+      "enabled": true
+    },
+    {
+      "src": "images/services/biostimulators/4-3.webp",
+      "service": "Biostimulators",
+      "area": "",
+      "areaToConfirm": "Full face",
+      "sessions": "",
+      "timing": "",
+      "enabled": true
+    },
+    {
+      "src": "images/services/biostimulators/4-4.webp",
+      "service": "Biostimulators",
+      "area": "",
+      "areaToConfirm": "Cheek / lower face",
+      "sessions": "",
+      "timing": "",
+      "enabled": true
+    },
+    {
+      "src": "images/services/prp/5-1.webp",
+      "service": "PRP",
+      "area": "",
+      "areaToConfirm": "Scalp / hair density",
+      "sessions": "",
+      "timing": "",
+      "enabled": true
+    },
+    {
+      "src": "images/services/scarlet-s-radiofrequency-microneedling/2.webp",
+      "service": "Scarlet S Radiofrequency Microneedling",
+      "area": "",
+      "areaToConfirm": "Acne scarring / skin texture",
+      "sessions": "",
+      "timing": "",
+      "enabled": true
+    },
+    {
+      "src": "images/services/scarlet-s-radiofrequency-microneedling/3.webp",
+      "service": "Scarlet S Radiofrequency Microneedling",
+      "area": "",
+      "areaToConfirm": "Neck / jawline",
+      "sessions": "",
+      "timing": "",
+      "enabled": true
+    },
+    {
+      "src": "images/services/chemical-peels/1.webp",
+      "service": "Chemical Peels",
+      "area": "",
+      "areaToConfirm": "Cheek pigmentation / texture",
+      "sessions": "",
+      "timing": "",
+      "enabled": true
+    },
+    {
+      "src": "images/services/chemical-peels/2.webp",
+      "service": "Chemical Peels",
+      "area": "",
+      "areaToConfirm": "Cheek pigmentation / texture",
+      "sessions": "",
+      "timing": "",
+      "enabled": true
+    },
+    {
+      "src": "images/services/chemical-peels/3.webp",
+      "service": "Chemical Peels",
+      "area": "",
+      "areaToConfirm": "Full face / pigmentation",
+      "sessions": "",
+      "timing": "",
+      "enabled": true
+    },
+    {
+      "src": "images/services/chemical-peels/4.webp",
+      "service": "Chemical Peels",
+      "area": "",
+      "areaToConfirm": "Back pigmentation / texture",
+      "sessions": "",
+      "timing": "",
+      "enabled": true
+    }
+  ]
+}

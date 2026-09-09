@@ -36,6 +36,61 @@ header.main-header .header-sticky.hide {
   opacity: 0;
 }
 
+/* Mobile shares the desktop header's two states: transparent over the hero at
+   the top of the page, solid white with a dark logo once scrolled. Nothing
+   here touches background or filter - only layout, because the menu collapses
+   to a hamburger and the brand has to centre independently of it. */
+@media (max-width: 991px) {
+  header.main-header .navbar {
+    min-height: 68px;
+    padding: 10px 20px;
+  }
+
+  header.main-header .navbar .container-fluid {
+    position: relative;
+    min-height: 48px;
+    padding: 0;
+  }
+
+  header.main-header .navbar-toggle {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    min-height: 38px;
+  }
+
+  header.main-header .navbar-brand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 !important;
+    padding: 0;
+    line-height: 0;
+    transform: translate(-50%, -50%);
+  }
+
+  header.main-header .main-logo {
+    display: block;
+    width: 210px;
+    max-width: calc(100vw - 150px);
+    height: auto;
+  }
+}
+
+/* custom.css nudges .navbar-brand up with margin-top:-10px, which fights the
+   navbar's align-items:center and leaves the logo 5px above the menu links.
+   Zero it out so flex centring lines the logo up with the nav in both states. */
+@media (min-width: 992px) {
+  header.main-header .navbar-brand {
+    margin-top: 0;
+  }
+}
+
 .navbar {
   padding: 5px 20px;
 }
@@ -259,7 +314,9 @@ header.main-header .header-sticky.hide {
   right: -52px;
   bottom: 0;
   left: -52px;
-  z-index: 1000;
+  /* Keep the controls above the slides, but below the sticky header's
+     z-index: 100 stacking context when the section scrolls underneath it. */
+  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -293,7 +350,266 @@ header.main-header .header-sticky.hide {
 }
 
 .service-item {
-  height: 500px !important;
+  height: 520px !important;
+}
+
+/* Service cards are one large modal trigger. Their fixed content tracks keep
+   titles, excerpts, calls to action and images aligned across every slide. */
+#services .service-card-link {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid rgba(57, 77, 155, 0.1);
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(21, 35, 86, 0.1);
+  transition:
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  #services .service-card-link:hover {
+    color: inherit;
+    border-color: rgba(57, 77, 155, 0.2);
+    box-shadow:
+      0 24px 50px rgba(21, 35, 86, 0.18),
+      0 2px 8px rgba(21, 35, 86, 0.08);
+  }
+
+}
+
+#services .service-card-link:focus-visible {
+  color: inherit;
+  outline: 3px solid #f19b1e;
+  outline-offset: -3px;
+}
+
+#services .service-card-link .service-content {
+  flex: 0 0 auto;
+  display: grid;
+  grid-template-rows: 62px 77px 44px;
+  gap: 11px;
+  margin-bottom: 18px;
+}
+
+#services .service-card-link .service-content-title {
+  display: block;
+  margin: 0;
+}
+
+#services .service-card-link .service-content-title h2 {
+  display: -webkit-box;
+  overflow: hidden;
+  width: 100%;
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.4;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+#services .service-card-link .service-content p {
+  display: -webkit-box;
+  overflow: hidden;
+  margin: 0;
+  line-height: 25.6px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}
+
+#services .service-card-cta {
+  align-self: start;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  width: 158px;
+  height: 44px;
+  padding: 3px 4px 3px 18px;
+  color: #394d9b;
+  background: rgba(241, 155, 30, 0.13);
+  border: 1px solid rgba(241, 155, 30, 0.38);
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 700;
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+#services .service-card-arrow {
+  position: relative;
+  flex: 0 0 36px;
+  width: 36px;
+  height: 36px;
+  overflow: hidden;
+  background: #f19b1e;
+  border-radius: 50%;
+  box-shadow: none;
+}
+
+#services .service-card-arrow img {
+  width: 14px;
+  transform: none;
+  transition: transform 0.3s ease-in-out;
+}
+
+#services .service-card-link:focus-visible .service-card-cta {
+  color: #fff;
+  background: #394d9b;
+  border-color: #394d9b;
+}
+
+#services .service-card-link:focus-visible .service-card-arrow img {
+  transform: rotate(45deg);
+}
+
+#services .service-card-link .service-image {
+  flex: 0 0 230px;
+  height: 230px;
+  min-height: 230px;
+  margin-top: auto;
+}
+
+#services .service-card-link .service-image figure {
+  height: 100%;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+#services .service-card-link .service-image .image-anime::after {
+  top: 0;
+  left: -70%;
+  width: 42%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 28%,
+    rgba(255, 255, 255, 0.42) 50%,
+    rgba(255, 255, 255, 0.08) 72%,
+    transparent 100%
+  );
+  transform: skewX(-18deg);
+  transition: left 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#services .service-card-link:focus-visible .service-image .image-anime::after {
+  left: 130%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 28%,
+    rgba(255, 255, 255, 0.42) 50%,
+    rgba(255, 255, 255, 0.08) 72%,
+    transparent 100%
+  );
+}
+
+#services .service-card-link .service-image img {
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  aspect-ratio: auto;
+  object-fit: cover;
+  border-radius: 30px;
+  transform: none;
+  transition: filter 0.4s ease;
+}
+
+#services .service-card-link:focus-visible .service-image img {
+  transform: none;
+  filter: saturate(1.06) contrast(1.025);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  #services .service-card-link:hover .service-card-cta {
+    color: #fff;
+    background: #394d9b;
+    border-color: #394d9b;
+  }
+
+  #services .service-card-link:hover .service-card-arrow img {
+    transform: rotate(45deg);
+  }
+
+  #services .service-card-link:hover .service-image .image-anime::after {
+    left: 130%;
+    height: 100%;
+    background: linear-gradient(
+      105deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.08) 28%,
+      rgba(255, 255, 255, 0.42) 50%,
+      rgba(255, 255, 255, 0.08) 72%,
+      transparent 100%
+    );
+  }
+
+  #services .service-card-link:hover .service-image img {
+    transform: none;
+    filter: saturate(1.06) contrast(1.025);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  #services .service-card-link {
+    height: 550px !important;
+  }
+
+  #services .service-card-link .service-content {
+    grid-template-rows: 93px 77px 44px;
+  }
+
+  #services .service-card-link .service-content-title h2 {
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+  }
+}
+
+@media (max-width: 991px) {
+  #services .service-card-link .service-image figure,
+  #services .service-card-link .service-image img {
+    border-radius: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  #services .service-card-link {
+    height: 520px !important;
+    padding: 24px;
+  }
+
+  #services .service-card-link .service-content {
+    grid-template-rows: 56px 77px 44px;
+  }
+
+  #services .service-card-link .service-content-title h2 {
+    font-size: 20px;
+  }
+
+  #services .service-card-cta {
+    width: 158px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #services .service-card-link,
+  #services .service-card-cta,
+  #services .service-card-arrow img,
+  #services .service-card-link .service-image .image-anime::after,
+  #services .service-card-link .service-image img {
+    transition: none;
+  }
 }
 
 .list-dot {
@@ -429,6 +745,129 @@ header.main-header .header-sticky.hide {
   background-color: #f1f1f1;
 }
 
+/* Mobile service modals: keep the panel centered, show media first, and let
+   the details scroll in the lower part of the modal. */
+@media (max-width: 767px) {
+  .modal[id^="serviceModal"] .modal-dialog {
+    display: flex;
+    align-items: center;
+    width: calc(100% - 24px);
+    max-width: 520px;
+    min-height: calc(100% - 24px);
+    margin: 12px auto;
+  }
+
+  .modal[id^="serviceModal"] .modal-content {
+    width: 100%;
+    height: min(92vh, 760px);
+    height: min(92dvh, 760px);
+    max-height: calc(100vh - 24px);
+    max-height: calc(100dvh - 24px);
+    overflow: hidden !important;
+    border-radius: 20px !important;
+  }
+
+  .modal[id^="serviceModal"] .modal-content > .row {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    margin: 0;
+  }
+
+  .modal[id^="serviceModal"] .modal-content > .row > .col-md-6:first-child {
+    position: relative;
+    flex: 0 0 clamp(220px, 40vh, 340px);
+    flex: 0 0 clamp(220px, 40dvh, 340px);
+    width: 100%;
+    max-width: 100%;
+    height: clamp(220px, 40vh, 340px);
+    height: clamp(220px, 40dvh, 340px);
+    min-height: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #fff;
+  }
+
+  .modal[id^="serviceModal"] .modal-content > .row > .col-md-6:first-child > img,
+  .modal[id^="serviceModal"] .modal-content > .row > .col-md-6:first-child > .swiper {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .modal[id^="serviceModal"] .modal-content > .row > .col-md-6:first-child .swiper-wrapper,
+  .modal[id^="serviceModal"] .modal-content > .row > .col-md-6:first-child .swiper-slide {
+    height: 100%;
+  }
+
+  .modal[id^="serviceModal"] .modal-content > .row > .col-md-6:first-child img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    object-fit: contain;
+  }
+
+  .modal[id^="serviceModal"] .text-box {
+    flex: 1 1 0;
+    width: 100%;
+    max-width: 100%;
+    min-height: 0;
+    height: auto;
+    padding: 24px 22px 30px !important;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    border-top: 1px solid rgba(57, 77, 155, 0.1);
+    scrollbar-width: thin;
+    scrollbar-color: rgba(57, 77, 155, 0.35) transparent;
+  }
+
+  .modal[id^="serviceModal"] .text-box::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  .modal[id^="serviceModal"] .text-box::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .modal[id^="serviceModal"] .text-box::-webkit-scrollbar-thumb {
+    background: rgba(57, 77, 155, 0.35);
+    border-radius: 10px;
+  }
+
+  .modal[id^="serviceModal"] .text-box h2 {
+    padding-right: 34px;
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .modal[id^="serviceModal"] .modal-table {
+    table-layout: fixed;
+  }
+
+  .modal[id^="serviceModal"] .modal-table th,
+  .modal[id^="serviceModal"] .modal-table td {
+    padding: 9px 8px;
+    overflow-wrap: anywhere;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 767px) and (max-height: 600px) {
+  .modal[id^="serviceModal"] .modal-content > .row > .col-md-6:first-child {
+    flex-basis: clamp(180px, 36vh, 220px);
+    flex-basis: clamp(180px, 36dvh, 220px);
+    height: clamp(180px, 36vh, 220px);
+    height: clamp(180px, 36dvh, 220px);
+  }
+}
+
 /* These three were a patch for the Filler modal only. They are now handled
    for EVERY service modal by the rules in index.html, and the first one
    actively broke Filler: "height: 100%" resolves to auto against the row
@@ -453,4 +892,154 @@ header.main-header .header-sticky.hide {
 
 .contact-form {
   border-radius: 40px !important;
+}
+
+/* ==================================================================
+   Before & After gallery  (#before-after)
+
+   Markup is built by js/before-after-render.js; every string shown
+   comes from data/before-after.json. Each card holds one finished
+   1200x1200 collage - Before left, After right - so the CSS here only
+   has to present it whole and square, never crop or re-compose it.
+   ================================================================== */
+
+#before-after {
+  background-color: var(--bg-color);
+}
+
+#before-after .before-after {
+  padding: 100px 0;
+}
+
+#before-after .section-title h3 {
+  color: #5c6bc0;
+}
+
+#before-after .section-title h2 {
+  color: #313263;
+}
+
+/* The consent / "results vary" note. Kept narrow so it reads as a
+   caption to the heading rather than a paragraph of body copy. */
+.ba-intro {
+  max-width: 720px;
+  margin: 18px auto 0;
+  color: #4a4f6a;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.ba-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.ba-item-hidden {
+  display: none;
+}
+
+.ba-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Square panel. The collage is already 1:1, so object-fit: contain
+   shows all of it with no letterboxing - and still shows all of it if
+   a future export is not perfectly square. */
+.ba-frame {
+  display: block;
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(57, 77, 155, 0.1);
+  border-radius: 20px;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.ba-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.ba-caption {
+  display: block;
+  margin-top: 14px;
+  text-align: center;
+}
+
+.ba-caption-title {
+  display: block;
+  color: #313263;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.ba-caption .ba-dash,
+.ba-caption .ba-dot {
+  color: #8892bf;
+}
+
+.ba-caption-meta {
+  display: block;
+  margin-top: 4px;
+  color: #6a7090;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .ba-link:hover .ba-frame {
+    border-color: rgba(57, 77, 155, 0.28);
+    transform: translateY(-4px);
+  }
+}
+
+.ba-link:focus-visible {
+  outline: none;
+}
+
+.ba-link:focus-visible .ba-frame {
+  outline: 3px solid #f19b1e;
+  outline-offset: 3px;
+}
+
+.ba-actions {
+  margin-top: 50px;
+  text-align: center;
+}
+
+/* .btn-default keeps margin-right:50px to clear the arrow circle its
+   ::before used to paint, but maya.css sets that pseudo-element to
+   content:none site-wide - so the reserved gap is now empty and drags
+   the button 25px left of centre. Drop it to sit on the axis. */
+.ba-actions .btn-default {
+  margin-right: 0;
+  cursor: pointer;
+}
+
+@media (max-width: 991px) {
+  #before-after .before-after {
+    padding: 70px 0;
+  }
+
+  .ba-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ba-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ba-caption-title {
+    font-size: 16px;
+  }
 }
