@@ -178,11 +178,6 @@
               "src": "images/services/filler/14.webp",
               "style": "",
               "enabled": true
-            },
-            {
-              "src": "images/services/filler/15.webp",
-              "style": "",
-              "enabled": true
             }
           ]
         },
@@ -285,7 +280,7 @@
       "enabled": true,
       "title": "Biostimulators",
       "cardTitle": "Biostimulators",
-      "cardImage": "images/services/biostimulators/4.webp",
+      "cardImage": "images/services/biostimulators/cover.webp",
       "cardExcerpt": "Biostimulators are injectables that stimulate your skin's natural collagen and elastin production leading to gradual natural looking results...",
       "wowDelay": "0.6s",
       "modal": {
@@ -297,7 +292,7 @@
           "imgClass": "img-fluid h-100 w-100 object-fit-contain",
           "slides": [
             {
-              "src": "images/services/biostimulators/4.webp",
+              "src": "images/services/biostimulators/cover.webp",
               "style": "",
               "enabled": false
             },
@@ -341,7 +336,7 @@
       "enabled": true,
       "title": "PRP",
       "cardTitle": "PRP",
-      "cardImage": "images/services/prp/5-outside.webp",
+      "cardImage": "images/services/prp/cover.webp",
       "cardExcerpt": "Experience the rejuvenating power of Platelet-Rich Plasma (PRP) at our clinic...",
       "wowDelay": "0.8s",
       "modal": {
@@ -392,11 +387,11 @@
           "slides": [
             {
               "src": "images/services/scarlet-s-radiofrequency-microneedling/1.webp",
-              "enabled": false
+              "enabled": true
             },
             {
               "src": "images/services/scarlet-s-radiofrequency-microneedling/2.webp",
-              "enabled": true
+              "style": ""
             },
             {
               "src": "images/services/scarlet-s-radiofrequency-microneedling/3.webp",
@@ -404,14 +399,6 @@
             },
             {
               "src": "images/services/scarlet-s-radiofrequency-microneedling/4.webp",
-              "style": ""
-            },
-            {
-              "src": "images/services/scarlet-s-radiofrequency-microneedling/5.webp",
-              "style": ""
-            },
-            {
-              "src": "images/services/scarlet-s-radiofrequency-microneedling/6.webp",
               "style": ""
             }
           ]
@@ -484,8 +471,7 @@
           "swiperClass": "journey-swiper-8",
           "slides": [
             { "src": "images/services/hydrabeauty-facial/1.webp" },
-            { "src": "images/services/hydrabeauty-facial/2.webp" },
-            { "src": "images/services/hydrabeauty-facial/3.webp" }
+            { "src": "images/services/hydrabeauty-facial/2.webp" }
           ]
         },
         "body": [
@@ -550,7 +536,7 @@
       "enabled": true,
       "title": "Regular Facial & Masks",
       "cardTitle": "Regular Facial & Masks",
-      "cardImage": "images/services/regular-facial-and-masks/10.webp",
+      "cardImage": "images/services/regular-facial-and-masks/cover.webp",
       "cardExcerpt": "Indulge in a rejuvenating skincare experience with our personalized facial treatments and specialized masks, designed to restore your skin's natural radiance...",
       "wowDelay": "1.4s",
       "modal": {
@@ -558,7 +544,7 @@
         "title": "Regular Facial & Masks",
         "media": {
           "type": "image",
-          "src": "images/services/regular-facial-and-masks/10-inside.webp",
+          "src": "images/services/regular-facial-and-masks/cover.webp",
           "imgClass": "img-fluid h-100 w-100 object-fit-contain"
         },
         "body": [
