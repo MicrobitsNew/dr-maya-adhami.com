@@ -691,7 +691,7 @@
       "enabled": true,
       "title": "Excision of lesions",
       "cardTitle": "Excision of lesions",
-      "cardImage": "images/services/excision-of-lesions/15.webp",
+      "cardImage": "images/services/excision-of-lesions/cover.webp",
       "cardExcerpt": "Take the first step towards healthier skin with our Excision of Lesions service...",
       "wowDelay": "1.4s",
       "modal": {
@@ -699,7 +699,7 @@
         "title": "Excision of lesions",
         "media": {
           "type": "image",
-          "src": "images/services/excision-of-lesions/15.webp",
+          "src": "images/services/excision-of-lesions/cover.webp",
           "imgClass": "img-fluid h-100 w-100 object-fit-contain"
         },
         "body": [
@@ -737,7 +737,8 @@
             },
             { "src": "images/services/laser-hair-removal/1.webp" },
             { "src": "images/services/laser-hair-removal/2.webp" },
-            { "src": "images/services/laser-hair-removal/3.webp" }
+            { "src": "images/services/laser-hair-removal/3.webp" },
+            { "src": "images/services/laser-hair-removal/4.webp" }
           ]
         },
         "body": [
