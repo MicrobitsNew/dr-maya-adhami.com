@@ -309,7 +309,7 @@
 	}
 
 	function submitVoucherForm(){
-		var whatsappNumber = "96176315516";
+		var whatsappNumber = "96176969900";
 		var message =
 			"*New Gift Voucher Application*\n\n" +
 			"*From:* " + $("#voucher-from").val() + "\n" +
