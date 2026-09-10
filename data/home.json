@@ -218,13 +218,11 @@
       "One voucher per person."
     ],
     "form": {
-      "action": "/",
-      "method": "POST",
+      "action": "https://wa.me/96176315516",
+      "method": "GET",
       "submitLabel": "Submit Application",
-      "successMessage": "Thank you! Your voucher application was sent successfully. We will contact you shortly.",
-      "errorMessage": "Sorry, your application could not be sent. Please try again.",
       "netlify": {
-        "enabled": true,
+        "enabled": false,
         "name": "gift-voucher",
         "honeypot": "bot-field"
       },

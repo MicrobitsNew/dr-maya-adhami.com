@@ -309,39 +309,20 @@
 	}
 
 	function submitVoucherForm(){
-		var $submitButton = $voucherForm.find('[type="submit"]');
-		var $submitLabel = $submitButton.find("span");
-		var originalLabel = $submitLabel.text();
-		$submitButton.prop("disabled", true).addClass("is-submitting");
-		$voucherForm.attr("aria-busy", "true");
-		$submitLabel.text("Sending...");
-		voucherSubmitMSG(null, "");
+		var whatsappNumber = "96176315516";
+		var message =
+			"*New Gift Voucher Application*\n\n" +
+			"*From:* " + $("#voucher-from").val() + "\n" +
+			"*To:* " + $("#voucher-to").val() + "\n" +
+			"*Email:* " + $("#voucher-email").val() + "\n" +
+			"*Phone:* " + $("#voucher-phone").val() + "\n" +
+			"*Service:* " + $("#voucher-service").val() + "\n" +
+			"*Value:* " + $("#voucher-value").val() + "\n" +
+			"*Personal Message:* " + ($("#voucher-message").val() || "None");
 
-		$.ajax({
-			type: "POST",
-			url: $voucherForm.attr("action") || "/",
-			data: $voucherForm.serialize()
-		})
-		.done(function(){
-			$voucherForm[0].reset();
-			voucherSubmitMSG(true, $voucherForm.data("success-message") || "Your voucher application was sent successfully.");
-		})
-		.fail(function(){
-			voucherSubmitMSG(false, $voucherForm.data("error-message") || "Sorry, your application could not be sent. Please try again.");
-		})
-		.always(function(){
-			$submitButton.prop("disabled", false).removeClass("is-submitting");
-			$voucherForm.removeAttr("aria-busy");
-			$submitLabel.text(originalLabel);
-		});
+		window.location.href = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message);
 	}
 
-	function voucherSubmitMSG(valid, msg){
-		var msgClasses = "voucher-form-message";
-		if (valid === true) msgClasses += " text-success";
-		if (valid === false) msgClasses += " text-danger";
-		$("#voucherMsgSubmit").removeClass().addClass(msgClasses).text(msg);
-	}
 	/* Gift voucher form validation end */
 
 	/* Appointment form validation */

@@ -600,6 +600,7 @@ header.main-header .header-sticky.hide {
   #services .service-card-cta {
     width: fit-content;
   }
+
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1178,7 +1179,9 @@ header.main-header .header-sticky.hide {
 }
 
 .voucher-form-panel {
+  display: flex;
   min-width: 0;
+  flex-direction: column;
   padding: 30px 44px 24px;
   /* auto, not hidden: on a short desktop window the fields run a little
      past the fixed-height panel, and hidden made that last stretch
@@ -1215,12 +1218,18 @@ header.main-header .header-sticky.hide {
 
 .voucher-kicker {
   display: block;
+  margin-top: auto;
   margin-bottom: 2px;
   color: #d95f79;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
+}
+
+.voucher-form-panel > form {
+  flex: 0 0 auto;
+  margin-bottom: auto;
 }
 
 .voucher-form-panel h2 {
@@ -1263,7 +1272,7 @@ header.main-header .header-sticky.hide {
 }
 
 .voucher-field textarea.form-control {
-  min-height: 54px;
+  min-height: 38px;
   resize: none;
 }
 
