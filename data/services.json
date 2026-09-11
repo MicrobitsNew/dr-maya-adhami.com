@@ -772,10 +772,6 @@
           "imgClass": "img-fluid h-100 w-100 object-fit-contain",
           "slides": [
             {
-              "src": "images/services/skin-care-products/1.webp",
-              "style": ""
-            },
-            {
               "src": "images/services/skin-care-products/2.webp",
               "style": ""
             },
